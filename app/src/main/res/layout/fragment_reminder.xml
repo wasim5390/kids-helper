@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvReminderTitle"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/reminder_slide_title_color"
+        android:textColor="@color/white"
+        android:text="@string/home_title_reminder"
+        android:gravity="center_vertical"
+        android:paddingStart="18dp"
+
+        android:textSize="18sp"
+        android:fontFamily="@font/helvetica_neue_lt_light"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/tvReminderTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvReminderTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReminderTitle"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btnAddNew"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/add_slide_button_selector"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/remove"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:minWidth="60dp"
+            android:fontFamily="@font/helvetica_neue_lt_light"
+            android:gravity="center"
+            android:background="@color/transparent"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/reminderText"
+        android:layout_width="match_parent"
+        android:layout_height="311dp"
+        android:text="@string/reminder_text"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textSize="25dp"
+        android:lines="2"
+        android:padding="30dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReminderTitle" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReminderTitle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"></android.support.v7.widget.RecyclerView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,33 @@
+<resources>
+    <dimen name="default_layout_padding">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="sos_textview_size">16dp</dimen>
+
+    <!-- Home slide Dimens -->
+    <dimen name="home_side_margin">16dp</dimen>
+    <dimen name="home_side_height_margin">30dp</dimen>
+    <dimen name="home_element_image_size">100dp</dimen>
+    <dimen name="home_element_lable_size">15sp</dimen>
+    <dimen name="home_silde_vertical_spacing">8dp</dimen>
+    <dimen name="home_padding_between_elements">-8dp</dimen>
+    <dimen name="home_content_container_vertical_padding">16dp</dimen>
+    <dimen name="home_element_image_top_margin">8dp</dimen>
+
+    <!-- uiu buttons header -->
+    <dimen name="uiu_buttons_header_height">66dp</dimen>
+
+    <!-- people -->
+    <dimen name="contact_detail_top_margin">10dp</dimen>
+
+    <dimen name="contact_list_detail_item">86.67dp</dimen>
+    <!-- end people -->
+
+    <!-- App drawer -->
+
+    <!-- Dialer numpad -->
+    <dimen name="numpad_size">20sp</dimen>
+
+    <!-- Navigation Drawer -->
+
+</resources>

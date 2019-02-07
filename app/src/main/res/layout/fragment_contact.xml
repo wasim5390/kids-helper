@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".KidsHelper.mvp.ui.dashboard.contact.ContactFragment">
+
+    <FrameLayout
+        android:id="@+id/search_background_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#565C65"
+        android:padding="16dp" >
+
+        <TextView
+            android:id="@+id/btn_search_contact"
+            android:textColor="#666666"
+            android:fontFamily="@font/helvetica_neue_lt_light"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/action_button_selector"
+            android:visibility="gone"
+            android:text="@string/search" />
+
+        <LinearLayout
+            android:id="@+id/input_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:visibility="visible">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/searchViewContact"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="5"
+                app:queryHint="@string/search"
+                android:inputType="textNoSuggestions"
+                android:background="@drawable/input_background_selector"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center"
+                app:iconifiedByDefault="false"
+                app:searchIcon="@null"
+                android:focusable="false"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tvSearchTip"
+        android:background="@color/white"
+        android:textSize="22sp"
+        android:textColor="#666666"
+        android:fontFamily="@font/droid_serif_italic"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/search_contact_tip"
+        android:visibility="gone"
+        />
+
+    <!-- Tip area displayed only in pick mode -->
+
+    <RelativeLayout
+        android:id="@+id/contact_list_tip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:textColor="#666666"
+            android:background="@color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:fontFamily="@font/droid_serif_italic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/select_a_favorite_contact" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.67dp"
+            android:layout_alignParentBottom="true"
+            android:background="#b8b8b8" />
+    </RelativeLayout>
+
+    <!-- contact list -->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/contact_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#b8b8b8"
+        android:dividerHeight="0.67dp" >
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.uiu.helper.KidsHelper.mvp.ui.kids.KidItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="86dp"
+    android:id="@+id/view"
+    android:background="@drawable/contact_list_row_bg_selector"
+    android:paddingBottom="12dp"
+    android:paddingLeft="@dimen/default_layout_padding"
+    android:paddingRight="@dimen/default_layout_padding"
+    android:paddingTop="12dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/ivKids"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        app:roundBottomStart="false"
+        app:roundBottomEnd="false"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/tvKidName"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/ivKids"
+        android:fontFamily="@font/droid_serif"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Albert Gordon " />
+
+</com.uiu.helper.KidsHelper.mvp.ui.kids.KidItemView>

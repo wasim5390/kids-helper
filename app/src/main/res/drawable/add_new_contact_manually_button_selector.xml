@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/people_slide_title_colorDark"
+        android:state_pressed="true" />
+    <item android:drawable="@drawable/slide_chooser_favorite_button"
+        android:state_focused="true" />
+    <item android:drawable="@drawable/slide_chooser_favorite_button" />
+</selector>

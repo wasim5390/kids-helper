@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:clickable="true">
+        <LinearLayout
+            android:id="@+id/llSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:clickable="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/settings_slide_title_color"
+                android:textColor="@color/white"
+                android:text="@string/sleep_mode"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/helvetica_neue_lt_light"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/grey_dark"
+                android:fontFamily="@font/helvetica_neue_lt_th"
+                android:text="@string/sleep_mode_instruction"
+                android:background="@color/lighter_gray"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    style="@style/MiniAppMenuButtonsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/sleep"
+                    android:textColor="@color/Black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/MiniAppMenuButtonsStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/off"
+                        android:textColor="@color/Black" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/swSleep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" />
+
+                    <TextView
+                        style="@style/MiniAppMenuButtonsStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/on"
+                        android:textColor="@color/Black" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:animateLayoutChanges="true"
+
+                android:weightSum="3">
+                <LinearLayout
+                    android:id="@+id/layoutTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    >
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/droid_serif"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="5dp"
+                        android:text="Set Wakeup time"
+                        android:textColor="@color/Black"
+                        android:textSize="20sp" />
+
+                    <CheckBox
+                        android:id="@+id/cbTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:checked="false"
+                        android:visibility="visible"
+                        />
+                </LinearLayout>
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    android:layout_below="@+id/layoutTime"
+                    android:visibility="visible"
+                    />
+
+            </RelativeLayout>
+                <Button
+                    android:id="@+id/btnChange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:background="@color/SeaGreen"
+                    android:text="@string/save_changes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+        </LinearLayout>
+</ScrollView>

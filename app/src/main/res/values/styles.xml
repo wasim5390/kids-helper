@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+          Base application theme, dependent on API level. This theme is replaced
+          by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+      -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+
+        <item name="android:colorPrimary">@color/PrimaryColor</item>
+        <item name="android:colorPrimaryDark">@color/PrimaryDarkColor</item>
+
+        <item name="android:statusBarColor">@color/PrimaryDarkColor</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <!-- <item name="android:windowNoTitle">true</item>--> <!-- Hides the Action Bar -->
+        <!--  <item name="android:windowFullscreen">true</item>  Hides the status bar-->
+    </style>
+
+    <!-- Material Design Navigation Drawer -->
+
+    <!-- Style for text in navigation buttons -->
+    <style name="nav_btn">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">17sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Roman</item>
+    </style>
+
+    <!-- Style for text in Action Buttons (i.e. search, add number, etc) -->
+    <style name="action_btn_text">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">24sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Lt</item>
+    </style>
+
+    <style name="contact_list_header_row_text">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">40sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Th</item>
+    </style>
+
+    <style name="contact_list_contact_name_text">
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">24sp</item>
+        <item name="font_path_from_assets">DroidSerif</item>
+    </style>
+
+    <!-- Style for text label in home slides -->
+    <style name="home_slides_label_text">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">@dimen/home_element_lable_size</item>
+        <item name="font_path_from_assets">DroidSerif.ttf</item>
+
+    </style>
+
+    <!-- Style for Home slide Title -->
+    <style name="home_slides_title_text">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Style for label in Contact details -->
+    <style name="contact_detail_label">
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">24sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Lt</item>
+    </style>
+
+    <!-- Style for input field in Contact details -->
+    <style name="contact_detail_input">
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">28sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Lt</item>
+    </style>
+
+    <!-- Style for list tip area -->
+    <style name="instruction_tip">
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">22sp</item>
+        <item name="font_path_from_assets">DroidSerif-Italic</item>
+    </style>
+
+    <!-- Style for first list item -->
+    <style name="contact_list_detail_first_item">
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">24sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Roman</item>
+    </style>
+    <!-- Style for login button -->
+    <style name="login_button">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/home_element_lable_size</item>
+        <item name="customFont">DroidSerif.ttf</item>
+    </style>
+    <!-- Style for second list item -->
+    <style name="contact_list_detail_second_item">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">4.67dp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Roman</item>
+    </style>
+
+
+    <!-- Style for flat action buttons -->
+    <style name="flat_action_button">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Lt</item>
+    </style>
+
+    <style name="list_tip_text">
+        <item name="android:background">#ffffff</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="font_path_from_assets">DroidSerif-Italic</item>
+    </style>
+
+    <style name="top_navigation_title_text">
+        <item name="font_path_from_assets">HelveticaNeueLTCom_Lt</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#f5f5f5</item>
+    </style>
+
+    <!-- Style for uiu toast message -->
+    <style name="uiu_custom_toast_text">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">22sp</item>
+        <item name="font_path_from_assets">DroidSerif-Italic</item>
+    </style>
+
+    <style name="dialer_numpad_button">
+        <item name="android:background">@drawable/dialer_numpad_bg_selector</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_pop_out</item>
+    </style>
+
+    <style name="MiniMenuButtonsStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="font_path_from_assets">DroidSerif</item>
+    </style>
+    <!-- Style for Home slide Sub Title -->
+    <style name="home_slides_sub_title_text">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">16sp</item>
+        <item name="customFont">HelveticaNeueLTCom-Lt.ttf</item>
+    </style>
+    <style name="percentTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="font_path_from_assets">DroidSerif</item>
+        <item name="android:fontFamily">@font/droid_serif</item>
+
+    </style>
+    <style name="MiniAppMenuButtonsStyle">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="font_path_from_assets">DroidSerif</item>
+        <item name="android:fontFamily">@font/droid_serif</item>
+
+    </style>
+
+
+</resources>

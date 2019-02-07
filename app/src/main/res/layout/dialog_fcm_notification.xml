@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="match_parent"
+        android:minHeight="65dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:background="@color/home_slide_title_color"
+        android:ellipsize="end"/>
+
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewMessage"
+        android:background="@color/sos_slide_title_color"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/approve"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:background="@android:color/holo_green_light"
+            android:visibility="visible"/>
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/WhiteSmoke" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/decline"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:background="@android:color/holo_red_light"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

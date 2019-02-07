@@ -1,0 +1,388 @@
+<resources>
+    <string name="app_name">Kids Helper</string>
+    <string name="app_name_fcm">KidsHelper</string>
+    <string name="wiser_helper_app">Wiser Helper App</string>
+    <string name="kid_helper_app">Kid Helper App</string>
+
+    <!-- Home slide items -->
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="home_title_reminder">Reminder</string>
+    <string name="rate_us">Rate us</string>
+    <string name="spread_the_love">Spread the love</string>
+    <string name="about">About</string>
+    <string name="home">Home</string>
+    <string name="contact_uss">Contact Us</string>
+    <string name="invite_wiser">Invite Wiser</string>
+    <string name="invite_kid">Invite Kid</string>
+    <string name="upgrade_helper">Upgrade Helper</string>
+    <string name="new_wiser_invitation">New invitation</string>
+    <string name="wiser_invite_body">You have received a wiser invite</string>
+    <string name="wiser_invite">%s has invited you, please accept the invitation to help your Loved One.</string>
+    <string name="wiser_has_updated_your_data">Wiser update</string>
+    <string name="help">Help</string>
+    <string name="logout">Log out</string>
+    <string name="delete">Delete</string>
+    <string name="add_number">Add Number</string>
+    <string name="add_email">Add Email</string>
+    <string name="email_address">Email Address</string>
+    <string name="add_remove_slides_desc">Get the experience of full customization</string>
+    <string name="do_you_want_to_remove_the_slide">Do you want to remove the slide?</string>
+    <string name="install">Install</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="on_wiser_device">on \n wiser device?</string>
+    <string name="remove_a_slide_arent_affect_the_content"> (once removed, the content in Wiser will be permanently deleted)</string>
+
+    <string name="logout_confirmation">Do you want to Logout?</string>
+    <string name="yes_logout">YES, Logout</string>
+    <string name="yes_install">YES, Install</string>
+    <string name="my_wisers">My Wisers</string>
+    <string name="helper_plus_menu">Helper PLUS Menu</string>
+    <string name="companion_the_easy_way_to_support_a_smartphone_remotely">Wiser Helper, the easy way to support a smartphone, remotely!</string>
+    <string name="kid_the_easy_way_to_support_a_smartphone_remotely">Kids Helper, the easy way to support a smartPhone, remotely!</string>
+
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="close">Close</string>
+    <string name="send_email">Yes, Send Email</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="fetching_data">Fetching data</string>
+    <string name="send_invite">Send Invite</string>
+    <string name="close_help">Close Help</string>
+    <string name="input_gmail_address">Enter email to invite wiser</string>
+    <string name="want_help_regarding_invite">Want help regarding invite?</string>
+    <string name="want_help_1">1) Make sure the Wiser app has been downloaded and installed on the Wiser phone.</string>
+    <string name="want_help_2">2) Make sure that Wiser is logged into the Wiser app.</string>
+    <string name="want_help_3">3) Add Wiser\'s email address below and click on \'send invite\' button.</string>
+    <string name="want_help_4">4) Ask Wiser to accept your invitation request. The invitation will appear to the left of the Homescreen.</string>
+    <string name="want_help_5">5) That\'s it!</string>
+    <string name="input_invitee_name">Enter Wiser\'s name</string>
+    <string name="input_your_name">Enter your name</string>
+    <string name="email_sent">Email has been sent successfully</string>
+    <string name="invite_your_first_wiser">Invite your first wiser</string>
+    <string name="to_support_your_close_ones_they_will_need_to_install_the_wiser_simple_launcher_app">To support your close ones
+    they will need to install Wiser - simple launcher app</string>
+    <string name="title_activity_wiser_mirror">WiserMirrorActivity</string>
+
+    <!-- Slides -->
+    <string name="open_drawer">Open Drawer </string>
+    <string name="close_drawer">Close Drawer </string>
+    <string name="tool_tip_people_slide">Tap on the \'plus\' \nto add a Contact</string>
+    <string name="tool_tip_app_slide">Tap on the \'plus\' \nto add an application</string>
+    <string name="tool_tip_app_direction">Tap on the \'plus\' \nto add a direction</string>
+    <string name="tool_tip_app_sos">Tap on the \'plus\' \nto add a sos number</string>
+    <string name="tool_tip_app_settings">Tap on the \'plus\' \nto add a setting</string>
+    <string name="tool_tip_app_reminder">Tap on the \'plus\' \nto add a reminder</string>
+    <string name="add">Add</string>
+    <string name="add_a_title_reminder">Please add a Reminder\'s title</string>
+    <string name="enter_a_destination">Enter a destination</string>
+    <string name="pick_a_location">Please pick a location</string>
+    <string name="click_here_to_install_theis_app">Click here to install this app</string>
+    <string name="user_has_image">User already has an image</string>
+    <string name="app_already_exists_in_this_slide">App already exists on this slide</string>
+    <string name="no_address">No Address</string>
+    <string name="login_error">Can\'t login, Please try again!</string>
+
+    <string name="select_a_favorite_application">Select a favorite application</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="home_number">Home number</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="wiser_contact_list">Wiser\'s Contact list</string>
+    <string name="your_contact_list">Your Contact list</string>
+    <string name="create">Create</string>
+    <string name="where_to">Select location</string>
+    <string name="destination_title">Create nickname</string>
+    <string name="no_place_address">No Location Address</string>
+    <string name="place_name">Location Name</string>
+    <string name="install_apps">Install Apps</string>
+    <string name="insert_destination">Enter address</string>
+    <string name="from_wisers_applications">From wiser\'s applications</string>
+    <string name="from_googleplay">From Googleplay store</string>
+    <string name="from_your_applications">From your applications</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="loading">Loading</string>
+    <string name="add_contacts_from">Add Contacts from:</string>
+    <string name="add_application">Add application:</string>
+    <string name="add_direction">Add direction:</string>
+    <string name="add_setting">Add setting:</string>
+
+    <string name="sos_text_1">Create a list  of emergency Contacts.\nTap the SOS  button and we will call\nthrough
+    the list until someone\nanswers.And your Wiser will receive\nan sms with your current location.</string>
+    <string name="sos_text_2">Tap on the \'+\' to add\n SOS Contact.</string>
+    <!-- home slides titles -->
+    <string name="home_title_apps">Applications</string>
+    <string name="home_title_directions">Directions</string>
+    <string name="home_title_safe_places">Safe places</string>
+    <string name="home_title_sos">SOS</string>
+    <string name="favorite_people">Favorite people</string>
+    <string name="favorite_ppl">Favorite People</string>
+    <string name="add_slides">Add Slides</string>
+    <string name="remove_slides">Remove Slides</string>
+    <string name="remove_slide">Remove Slide</string>
+    <string name="favorite_people_name">FavoritePeople</string>
+    <string name="home_title_home">Home</string>
+
+    <!---main list-->
+    <string name="sent_from_companion">invite sent</string>
+    <string name="received_from_wiser">invite received</string>
+    <string name="invited_email_sent">Email Invite Sent</string>
+    <string name="rejected">rejected</string>
+    <string name="connected">tap to begin</string>
+    <string name="invitation_actions_resend">Resend invitation</string>
+    <string name="invitation_actions_accept">Accept invitation</string>
+    <string name="invitation_actions_remove">Remove from the list</string>
+    <string name="invitation_actions_switch">Switch primary helper</string>
+    <string name="your_compnion_request_ad_been_approved">Request approved</string>
+
+    <!---wiser data activity-->
+    <string name="you_cannot_have_more_then_3_slides_of_the_same_type">Sorry you can only have 3 %s slides</string>
+    <string name="this_contact_already_exits_in_this_slide">This Contact already exists in this slide</string>
+    <string name="this_sos_already_exits_in_this_slide">This sos already exists in this slide</string>
+    <string name="please_enter_at_least_one_name_above">Please enter at least one name above</string>
+    <string name="please_enter_a_name_and_a_number_above">please enter a name and a number above</string>
+    <string name="please_enter_at_least_one_number_home_or_mobile">Please enter a phone number above</string>
+    <string name="companion_app_requires_an_active_intenet_conection">Please check your phone`s connectivity, you must be online to update the wiser`s app.</string>
+
+
+    <string name="setting_already_added">Setting already added,\nPlease add another setting</string>
+    <string name="select_a_favorite_contact">Select a favorite Contact</string>
+    <string name="search">Search</string>
+
+
+    <!-- Header buttons -->
+    <string name="header_button_back">Back</string>
+    <string name="header_button_done">Done</string>
+    <string name="header_button_edit">Edit</string>
+    <string name="header_button_cancel">Cancel</string>
+    <string name="header_button_save">Save</string>
+    <string name="header_button_close">Close</string>
+
+    <string name="add_slide">Add Slide</string>
+    <string name="add_wiser">Connect Wiser</string>
+
+    <string name="contact_list_header">What would you like to add?</string>
+    <string name="action_button_delete_contact">Delete Contact</string>
+
+    <!-- Edit Contact fields -->
+    <string name="contact_edit_name">Edit name</string>
+    <string name="contact_add_name">Add name</string>
+    <string name="contact_edit_mobile_number">Edit mobile number</string>
+    <string name="contact_add_mobile_number">Add mobile number</string>
+    <string name="contact_edit_home_number">Edit home number</string>
+    <string name="contact_add_home_number">Add home number</string>
+    <string name="contact_edit_email">Edit email</string>
+    <string name="contact_add_email">Add email</string>
+    <string name="contact_edit_picture">Edit picture</string>
+    <string name="contact_add_picture">Add picture</string>
+    <string name="contact_edit">Edit Contact</string>
+    <string name="delete_contact_dialog_title">Delete Contact</string>
+    <string name="delete_contact_dialog_body">Are you sure you want to delete %1$s from your Contacts list?</string>
+
+    <!-- People area -->
+    <string name="contact_first_name_label">First name</string>
+    <string name="contact_last_name_label">Last name</string>
+    <string name="contact_mobile_number_label">Mobile number</string>
+    <string name="contact_home_number_label">Home number</string>
+    <string name="contact_email_label">E-mail</string>
+    <string name="contact_photo_picker">How would you like\nto add a picture?</string>
+    <string name="contact_photo_picker_or_tip">Or</string>
+    <string name="email_con_error_title">Did you mean to write .com</string>
+    <string name="email_con_error_body">Would you like to use %1$s.com (you insert: %2$s<b>.con</b>)?</string>
+    <string name="contact_add_email_tip_body">For example:\ndan@example.com</string>
+    <string name="action_button_camera">Camera</string>
+    <string name="action_button_gallery">Gallery</string>
+    <string name="email_validation_error">Wrong e-mail format</string>
+    <string name="search_tip">Start typing in order to search for a Contact</string>
+
+    <!--settings-->
+
+    <string name="volume">Volume</string>
+    <string name="brightness">Brightness</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="missing_a_specific_setting">Missing a specific setting?</string>
+    <string name="ask_us_to_add">Ask us to add</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="settings_fragment_mail_subject">Please add new setting</string>
+    <string name="settings_send_email">Send email</string>
+    <string name="setting_title">Control System Settings</string>
+    <string name="setting_bluetooth">Bluetooth</string>
+    <string name="setting_location">Location</string>
+    <string name="setting_sounds">Sounds</string>
+    <string name="setting_battery_level">Battery level</string>
+    <string name="setting_battery">Battery</string>
+    <string name="setting_datetime">Date &amp; Time</string>
+
+    <!---push -->
+
+    <string name="you_have_a_companion_request">Wiser Helper request</string>
+
+    <!-- error -->
+    <string name="already_companion_user">Oops, this email is already Wiser Helper. please enter a different email address</string>
+    <string name="status_not_found">%s has never logged in to Wiser. Please see the help for more details</string>
+    <string name="invalid_session">This session is invalid, this is probably due to server maintenance please log out and log in again</string>
+
+    <!-- toasts -->
+    <string name="internet_connection_lost">Internet Connection lost</string>
+    <string name="wiser_removed_from_list">you have successfully deleted a wiser from your list</string>
+    <string name="no_phone_clients">There are no phone clients installed</string>
+    <string name="no_email_clients">There are no email clients installed</string>
+    <string name="no_sms_clients">There are no sms clients installed</string>
+    <string name="one_slide_of_each_type">Please stop, your wiser must have at least one slide!</string>
+    <string name="enter_valid_email">Enter a valid email Please</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="auto_complete_now_available">Auto Complete now available</string>
+    <string name="user_does_not_exists_in_server">Oops, This Wiser user is still not registered, please select your gmail in order to send the invite</string>
+    <string name="no_google_play_app">"Could not open Android market, please install the market app."</string>
+
+    <!-- Dialer Activity -->
+    <string name="dialer">Dialer</string>
+    <string name="call_history">Call History</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="earlier">Earlier</string>
+    <string name="incoming_call">Incoming call</string>
+    <string name="outgoing_call">Outgoing call</string>
+    <string name="missed_call">Missed call</string>
+    <string name="unknown">Unknown</string>
+    <string name="notes">Notes</string>
+    <string name="you_didn_t_make_any_calls_">"You didn't make any calls "</string>
+    <string name="create_new_contact">Create new Contact</string>
+    <plurals name="minutes_ago">
+        <item quantity="one">One minute ago</item>
+        <item quantity="other">%d minutes ago</item>
+    </plurals>
+    <string name="sos_plus_service">Please upgrade now to Helper PLUS</string>
+    <string name="wiser_plus">Purchase</string>
+    <string name="home_add_wiser_plus_desc">Wiser Helper is so simple. You see a mirror view of the Wiser Launcher app. Once connected, remotely over the internet, Wiser Helper can:</string>
+    <string name="helper_plus1">Add, edit or remove contacts from their smartphone</string>
+    <string name="helper_plus2">Add or remove apps</string>
+    <string name="helper_plus3">Provide driving directions</string>
+    <string name="helper_plus4">Create reminders</string>
+    <string name="helper_plus5">Set up emergency SOS numbers</string>
+    <string name="helper_plus6">Manage their phone’s settings, such as volume, brightness, wifi, and battery life</string>
+    <string name="helper_plus7">Upgrade now and invite your friend or family to enjoy Wiser on their smartphone. </string>
+    <!---parse -->
+
+    <!---side menu-->
+    <string name="about_us"> Wiser Helper is so simple. You see a mirror view of their Wiser app. You can add or remove their Contacts, apps, driving directions, and manage their settings, such as volume, brightness, wifi, and battery life. Start now and support your loved ones remotely. Simply install Wiser on their phone by adding their email, here
+       </string>
+    <string name="contact_us">for any further assistance please Contact us at: Contact@uiumobile.com</string>
+
+    <string name="welcome_to_helper">Welcome to Helper Plus \ncutomization experience</string>
+    <string name="welcome_to_Desc">Our unique customization experience\nallow for:\nadding more
+        of current slides\nnew GPS pointers slide\nenhance SOS slide\nBackup your configuration\n.......</string>
+
+
+    <string name="create_your_reminder">Create Your Reminder</string>
+    <string name="title">Title:</string>
+    <string name="set_date">Set Date:</string>
+    <string name="set_time">Set Time:</string>
+    <string name="repeat">Repeat</string>
+    <string name="uiu_ltd">UIU LTD.</string>
+    <string name="remove">Remove</string>
+    <string name="to_purchase">to Purchase</string>
+    <string name="version_code">VersionCode:</string>
+    <string name="version_number">VersionCode:</string>
+    <string name="no_connection_found">No Connection Found</string>
+    <string name="wiser_info">Helper is the easy way to allow your friend or loved one to use and enjoy their Wiser smart-phone experience. Helper is so simple. You see a mirror view of their Wiser app."</string>
+
+    <string name="hello">Hello</string>
+    <string name="wants_help">wants to help you with your smartphone!</string>
+    <string name="is_using">is using a new app called Wiser Helper.</string>
+    <string name="can_see">can see a mirror view of your Wiser phone, allowing him to make changes on your phone, remotely.</string>
+    <string name="imagine_your">Imagine your phone in</string>
+    <string name="hands_on">\'s hands no matter how far apart you are! Now, if you allow, from anywhere,</string>
+    <string name="can_help">can help you with your phone.</string>
+    <string name="can">can:</string>
+    <string name="add_contacts">add new contacts or mobile apps to your phone</string>
+    <string name="add_reminder">create reminders and alarms for you</string>
+    <string name="add_directions">send you driving directions</string>
+    <string name="add_sos">set up SOS numbers and alerts so people know if you\'re in trouble</string>
+    <string name="much_more">and much more ...</string>
+    <string name="to_allow">To allow</string>
+    <string name="to_do_this">to do this, you need to click on the link highlighted in blue below and download the FREE Wiser app. The Wiser app is designed to make your smartphone easier to use.</string>
+    <string name="please_call">Please call or text</string>
+    <string name="to_confirm">to confirm this request.</string>
+    <string name="follow_instructions">There are easy to follow instructions once you click on this link.</string>
+    <string name="wiser_link">https://play.google.com/store/apps/details?id=com.wiser.home</string>
+    <string name="thanks">Thanks,</string>
+    <string name="wiser_helper">Wiser Helper,</string>
+    <string name="contact_email">email: contact@uiumobile.com</string>
+    <string name="invites_you">invites you to help with your smartphone</string>
+
+    <string name="email_hello">Hello</string>
+    <string name="email_wants_help">wants to help you with your smartphone!</string>
+    <string name="email_is_using">is using a new app called Wiser Helper.</string>
+    <string name="email_can_see">can see a mirror view of your Wiser phone, allowing him to make changes on your phone, remotely.</string>
+    <string name="email_imagine_your">Imagine your phone in</string>
+    <string name="email_hands_on">\'s hands no matter how far apart you are! Now, if you allow, from anywhere,</string>
+    <string name="email_can_help">can help you with your phone.</string>
+    <string name="email_can">can:</string>
+    <string name="email_add_contacts">add new contacts or mobile apps to your phone</string>
+    <string name="email_add_reminder">create reminders and alarms for you</string>
+    <string name="email_add_directions">send you driving directions</string>
+    <string name="email_add_sos">set up SOS numbers and alerts so people know if you\'re in trouble</string>
+    <string name="email_much_more">and much more ...</string>
+    <string name="email_to_allow">To allow</string>
+    <string name="email_to_do_this">to do this, you need to click on the link highlighted in blue below and download the FREE Wiser app. The Wiser app is designed to make your smartphone easier to use.</string>
+    <string name="email_please_call">Please call or text</string>
+    <string name="email_to_confirm">to confirm this request.</string>
+    <string name="email_follow_instructions">There are easy to follow instructions once you click on this link.</string>
+    <string name="email_wiser_link">https://play.google.com/store/apps/details?id=com.wiser.home</string>
+    <string name="email_thanks">Thanks,</string>
+    <string name="internet_not_found">No Internet, We\'re having trouble getting data right now.</string>
+    <string name="email_wiser_helper">Wiser Helper,</string>
+    <string name="email_contact_email">email: contact@uiumobile.com</string>
+    <string name="email_invites_you">invites you to help with your smartphone</string>
+    <string name="status_connected">This user is already your connected, please tap to begin from Connections List</string>
+    <string name="status_sent_from_companion">you have already sent an invitation to Wiser, please see the Connections List</string>
+    <string name="status_sent_from_wiser">You have already received an invitation to Wiser Helper, please see the Connections List</string>
+    <string name="status_rejected">This user has already rejected your invitation</string>
+    <string name="google_login">Login to Google</string>
+    <string name="dialog_google_desc">Please choose your email address that you want for Wiser</string>
+    <string name="unknown_error">An unknown error occurred</string>
+    <!-- Firebase FCM -->
+    <string name="default_notification_channel_id" translatable="false">default_channel</string>
+
+    <!-- Fonts from assets -->
+    <string name="BebasNeue">fonts/BebasNeue.otf</string>
+    <string name="Droidserif">fonts/DroidSerif.ttf</string>
+    <string name="Droidserif_Bold">fonts/DroidSerif-Bold.ttf</string>
+    <string name="Droidserif_BoldItalic">fonts/DroidSerif-BoldItalic.ttf</string>
+    <string name="Droidserif_Italic">fonts/DroidSerif-Italic.ttf</string>
+    <string name="HelveticaNeueLTCom_Lt">fonts/HelveticaNeueLTCom-Lt.ttf</string>
+    <string name="HelveticaNeueLTCom_Roman">fonts/HelveticaNeueLTCom-Roman.ttf</string>
+    <string name="HelveticaNeueLTCom_Th">fonts/HelveticaNeueLTCom-Th.ttf</string>
+    <string name="PatrickHand_Regular">fonts/PatrickHand-Regular.ttf</string>
+    <string name="LED">fonts/LED.otf</string>
+
+    <string name="approve">Approve</string>
+    <string name="decline">Decline</string>
+    <string name="kids">Kids</string>
+    <string name="press_arrows">Press Arrows</string>
+    <string name="favorite_apps">Favorite Applications</string>
+    <string name="favorite_links">Favorite Links</string>
+    <string name="reminder_text">No Reminder created yet!</string>
+    <string name="query_fav_app">Type to select favorite application</string>
+    <string name="search_contact_tip">Start typing to \nsearch for contacts</string>
+    <string name="title_activity_kid_location">Location</string>
+    <string name="disconnect_kid">Disconnect Kid</string>
+    <string name="tap_to_record_notes">Tap to record notes</string>
+    <string name="tap_to_stop_recording">Tap to stop recording</string>
+    <string name="remove_slide_alert_desc"> (once removed, the content in Kids App will be permanently deleted)</string>
+    <string name="recharge_kid_battery_alert">Your kid\'s device battery is getting down, please recharge it!</string>
+    <string name="kid_s_location">Kid\'s Location</string>
+    <string name="sleep">Sleep</string>
+    <string name="remove_contact">Remove Contact</string>
+    <string name="no_street_view_available">No Street View available \nfor this location!</string>
+    <string name="add_safe_place">Add safe place:</string>
+    <string name="great_all_caught_up">Great, All caught up!</string>
+    <string name="sleep_mode">Sleep Mode</string>
+    <string name="sleep_mode_instruction">Place your kid\'s device in sleep mode by tapping \'on\'. If you want the device to \'wake up\' automatically, set the timer below.</string>
+    <string name="enter_mobile_number">Please enter valid mobile number</string>
+    <string name="enter_other_mobile_number">Another user registered with this mobile number, Please provide other mobile number!</string>
+
+</resources>

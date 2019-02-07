@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Settings-->
+
+    <dimen name="seekbar_thumb_width">15dp</dimen>
+    <dimen name="settings_padding">13dp</dimen>
+    <dimen name="sos_textview_size">14dp</dimen>
+</resources>

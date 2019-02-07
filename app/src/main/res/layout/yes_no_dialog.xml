@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#a5000000"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_marginRight="28dp"
+        android:layout_marginLeft="28dp"        
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minHeight="133dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/yes_no_dialog_text_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_header_blue"
+            android:gravity="center"            
+            tools:text="Delete a parseContact"
+            android:textColor="#ffffff"            
+            android:textSize="22.67sp" />
+            
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_marginTop="-1dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_body" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                 />
+
+            <TextView
+                android:id="@+id/yes_no_dialog_text_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"                
+                android:gravity="left" 
+                android:lineSpacingExtra="10dp"
+                tools:text="You are on the way to delete bla bla"
+                android:textColor="#333333"
+                android:textSize="17.33sp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"       
+                android:layout_below="@+id/yes_no_dialog_text_delete" >                
+
+                <Button
+                    android:id="@+id/yes_no_dialog_button_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                                  
+                    android:background="@drawable/small_action_button_flat_green"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/yes"
+                    android:textColor="@android:color/white"                    
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/yes_no_dialog_button_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                    
+                    android:background="@drawable/small_action_button_flat_red"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/no"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

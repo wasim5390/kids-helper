@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.uiu.helper.KidsHelper.mvp.ui.slides.contacts.FavoritePeopleItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="H, 0.9"
+        android:layout_margin="5dp"
+        app:placeholderImage="@drawable/wiser_avatar"
+
+        app:roundAsCircle="true"
+        app:roundingBorderWidth="2dp"
+        app:roundingBorderColor="#000000"
+        />
+    <TextView
+        android:id="@+id/tv_lable"
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@+id/iv_item"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/droid_serif"
+        android:text="Add"
+        />
+    <ImageView
+        android:id="@+id/ivEggTimer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_egg_timer"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="@+id/iv_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintDimensionRatio="V, 0.35"
+        android:visibility="gone"
+        />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp"
+        >
+    <ImageView
+        android:id="@+id/element_close_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:visibility="gone"
+        android:clickable="true"
+        android:src="@drawable/remove_from_slide_button_selector"
+        />
+    </FrameLayout>
+</com.uiu.helper.KidsHelper.mvp.ui.slides.contacts.FavoritePeopleItemView>

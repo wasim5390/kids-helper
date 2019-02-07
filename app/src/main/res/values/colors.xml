@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="PrimaryColor">#F44336</color>
+    <color name="PrimaryDarkColor">#D32F2F</color>
+    <color name="White">#FFFFFF</color>
+    <color name="sos_slide_title_color">#C82506</color>
+    <color name="Red">#FF0000</color>
+    <color name="MediumVioletRed">#C71585</color>
+    <color name="Gray">#808080</color>
+    <color name="SeaGreen">#2E8B57</color>
+    <color name="Green">#008000</color>
+    <color name="Blue">#0000FF</color>
+    <color name="WhiteSmoke">#F5F5F5</color>
+    <color name="Black">#000000</color>
+    <color name="lighter_gray">#ddd</color>
+    <color name="RoyalBlue">#4169E1</color>
+    <color name="Yellow">#FFFF00</color>
+
+    <color name="grey_light">#565C65</color>
+    <color name="grey_dark">#353A40</color>
+    <color name="black_trans">#AA000000</color>
+
+    <color name="notification_accepted">#51C156</color>
+    <color name="notification_rejected">#e60000</color>
+
+    <!-- home slides -->
+    <color name="home_slide_title_color">#0D9F8F</color>
+    <color name="people_slide_title_color">#4E92C8</color>
+    <color name="people_slide_title_colorDark">#5381CB</color>
+    <color name="apps_slide_title_color">#51C156</color>
+    <color name="apps_slide_title_colorDark">#48AB7B</color>
+    <color name="links_slide_title_color">#f1C555</color>
+    <color name="links_slide_title_color_dark">#ffa533</color>
+    <color name="directions_slide_title_color">#ff9a00</color>
+    <color name="directions_slide_title_colorDark">#FF8100</color>
+    <color name="settings_slide_title_color">#87CEEB</color>
+    <color name="reminder_slide_title_color">#FF00FF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_bg">#ff555555</color>
+
+    <color name="slide_button_plus_add">#f0f0f0</color>
+    <color name="contact_list_row_selector">#ffa508</color>
+    <color name="white">#ffffff</color>
+    <color name="instruction_tips">#666666</color>
+
+    <!-- dialer -->
+    <color name="numpad_letter_color">#5f5f5f</color>
+
+
+    <!-- Home items -->
+    <color name="contacts_bg">#5281c0</color>
+    <color name="dialer_bg">#1CC700</color>
+    <color name="messaging_bg">#D733FA</color>
+    <color name="camera_bg">#FF9D10</color>
+    <color name="gallery_bg">#6c5250</color>
+    <color name="app_bg">#ff4040</color>
+
+    <!-- App recommnedation bg color -->
+
+
+</resources>
