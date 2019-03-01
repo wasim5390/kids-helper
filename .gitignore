@@ -9,11 +9,3 @@
 *.iml
 /*.iml
 *.apk
-
-.externalNativeBuild
-.idea
-gradlew
-gradlew.bat
-
-gradle/
-gradle/wrapper

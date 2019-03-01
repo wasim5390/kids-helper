@@ -5,6 +5,10 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.uiu.helper.KidsHelper.mvp.Constant;
+import com.uiu.helper.KidsHelper.mvp.model.User;
+import com.uiu.helper.KidsHelper.mvp.model.response.BaseResponse;
+import com.uiu.helper.KidsHelper.mvp.source.DataSource;
+import com.uiu.helper.KidsHelper.mvp.source.Repository;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
@@ -40,6 +44,21 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
      * @param token The new token.
      */
     private void sendRegistrationToServer(String token) {
-        // TODO: Implement this method to send token to your app server.
+
+        User user = PreferenceUtil.getInstance(this).getAccount();
+        if(user.getId() == null)
+            return;
+
+        Repository.getInstance().addFirebaseToken(user.getId(), token, new DataSource.GetResponseCallback<BaseResponse>() {
+            @Override
+            public void onSuccess(BaseResponse response) {
+
+            }
+
+            @Override
+            public void onFailed(int code, String message) {
+
+            }
+        });
     }
 }

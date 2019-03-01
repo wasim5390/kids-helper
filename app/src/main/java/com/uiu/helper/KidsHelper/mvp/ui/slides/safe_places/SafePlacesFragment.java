@@ -1,5 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.slides.safe_places;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
@@ -243,7 +245,7 @@ public class SafePlacesFragment extends BaseFragment implements SafePlacesAdapte
         ChooseSafePlaceFragment fragment = ChooseSafePlaceFragment.newInstance();
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.replace(R.id.container, fragment,ChooseSafePlaceFragment.TAG);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

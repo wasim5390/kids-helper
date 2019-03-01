@@ -130,7 +130,7 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
 
     }
 
-    public void createFence(LatLng fence,String title){
+    public void createFence(LatLng fence,String title,boolean firstLoad){
         CircleOptions circleOptions = new CircleOptions()
                 .center( fence ).radius(15)
                 .fillColor(0x40ff0000)
@@ -142,7 +142,10 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
         BitmapDescriptor descriptor = createPureTextIcon(title);
         if(descriptor!=null)
             mMap.addMarker(new MarkerOptions().icon(descriptor).position(fence)); // these are titles
+        if (firstLoad)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(fence,16.5f));
+        else
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(fence));
 
     }
 
@@ -154,12 +157,12 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
     }
 
     @Override
-    public void onGeofenceLoaded(List<DirectionsItem> directions) {
+    public void onGeofenceLoaded(List<DirectionsItem> directions,boolean firstLoad) {
         geoList.clear();
         geoList.addAll(directions);
         for(DirectionsItem directionsItem:directions) {
             if(directionsItem.getLatitude()!=null && directionsItem.getLongitude()!=null)
-            createFence(new LatLng(Double.valueOf(directionsItem.getLatitude()), Double.valueOf(directionsItem.getLongitude())), directionsItem.getTitle());
+            createFence(new LatLng(Double.valueOf(directionsItem.getLatitude()), Double.valueOf(directionsItem.getLongitude())), directionsItem.getTitle(),firstLoad);
 
         }
         mPresenter.getKidLocation();
@@ -181,7 +184,7 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
                 if(firstLoad)
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18.5f));
                     else
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16.5f));
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
                 firstLoad=false;
                 tvMessage.setVisibility(View.GONE);
 
@@ -230,7 +233,8 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
                     .position(latLng);
             currentMarker.remove();
             currentMarker = mMap.addMarker(markerOptions);
-            onGeofenceLoaded(geoList);
+            onGeofenceLoaded(geoList,false);
+            if(geoList.isEmpty())
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         }
 
@@ -243,7 +247,7 @@ public class KidLocationFragment extends BaseFragment implements KidLocationCont
             currentMarker.remove();
             currentMarker = null;
             mMap.clear();
-            onGeofenceLoaded(direction.getDirections());
+            onGeofenceLoaded(direction.getDirections(),false);
         }
 
     }

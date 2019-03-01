@@ -79,7 +79,7 @@ public class SleepFragment extends BaseFragment implements SleepContract.View {
     public void initUI(View view) {
         EventBus.getDefault().register(this);
         mKidId = getArguments().getString(KEY_SELECTED_KID);
-        setting = PreferenceUtil.getInstance(getContext()).getKidDeviceSettings(mKidId);
+
         initFields();
         if(presenter==null)
             presenter =  new SleepPresenter(this,mKidId,PreferenceUtil.getInstance(getActivity()), Repository.getInstance());
@@ -184,7 +184,8 @@ public class SleepFragment extends BaseFragment implements SleepContract.View {
 
     @Override
     public void onSettingsUpdated(Setting settings) {
-
+        this.setting=settings;
+        updateUi();
     }
 
     @Override
@@ -224,9 +225,9 @@ public class SleepFragment extends BaseFragment implements SleepContract.View {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(NotificationReceiveEvent receiveEvent) {
         if(receiveEvent.getNotificationForSlideType()== Constant.REQ_SETTINGS) {
-            JSONObject jsonObject = receiveEvent.getNotificationResponse();
-            Setting setting =  new Gson().fromJson(jsonObject.toString(),Setting.class);
-            onSettingsLoaded(setting);
+         //   JSONObject jsonObject = receiveEvent.getNotificationResponse();
+         //   Setting setting =  new Gson().fromJson(jsonObject.toString(),Setting.class);
+         //   onSettingsLoaded(setting);
         }
 
     }

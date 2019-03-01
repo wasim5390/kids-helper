@@ -10,6 +10,7 @@ import com.uiu.helper.KidsHelper.mvp.source.Repository;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -104,6 +105,7 @@ public class NotificationsListPresenter implements NotificationsListContract.Pre
                         if(currentPage==0) {
                             mDataList.clear();
                             mDataList.addAll(response.getData().getNotifications());
+                            Collections.reverse(mDataList);
                             if(historyToLoad)
                                 view.onNotificationHistoryLoaded(mDataList);
                             else

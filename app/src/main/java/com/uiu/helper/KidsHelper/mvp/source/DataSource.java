@@ -32,6 +32,7 @@ import retrofit2.http.Part;
 public interface DataSource {
 
     void createAccount(HashMap<String, Object> params, GetResponseCallback<GetAccountResponse> callback);
+    void addFirebaseToken(String userId,String fcmKey, GetResponseCallback<BaseResponse> callback);
 
     void getInvites(String userEmail, GetDataCallback<InvitationResponse> callback);
     void sendInvite(String inviteeEmail,String helperId, GetResponseCallback<InvitationResponse> callback);

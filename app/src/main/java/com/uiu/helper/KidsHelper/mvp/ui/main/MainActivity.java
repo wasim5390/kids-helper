@@ -42,6 +42,7 @@ import com.uiu.helper.KidsHelper.mvp.Injection;
 import com.uiu.helper.KidsHelper.mvp.events.GoogleLoginEvent;
 import com.uiu.helper.KidsHelper.mvp.events.LogoutEvent;
 import com.uiu.helper.KidsHelper.mvp.events.MainUIActionEvent;
+import com.uiu.helper.KidsHelper.mvp.model.User;
 import com.uiu.helper.KidsHelper.mvp.model.response.GetAccountResponse;
 import com.uiu.helper.KidsHelper.mvp.source.DataSource;
 import com.uiu.helper.KidsHelper.mvp.source.Repository;
@@ -88,7 +89,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
     SimpleDraweeView image;
     TextView name, email;
     TextView navUpgradeView;
-
+    User user;
     Repository repository;
 
 
@@ -108,8 +109,15 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
         image = header.findViewById(R.id.navigation_view_profile_image);
         navUpgradeView = header.findViewById(R.id.navigation_view_upgrade);
 
+
         repository = Injection.provideRepository(this);
         setDrawerToggle();
+        user = PreferenceUtil.getInstance(MainActivity.this).getAccount();
+        if(user.getId()!=null){
+            PermissionUtil.requestPermissions(this,this);
+            setProfileInfo(user.getName(),user.getEmail(),user.getImageLink());
+            return;
+        }
         googleSignInClient();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account == null) {
@@ -118,6 +126,13 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
             getProfileInformation(account);
         }
 
+    }
+
+    private void setProfileInfo(String name,String email,String image){
+        this.name.setText(name);
+        this.email.setText(email);
+        this.image.setImageURI(image);
+        toolbar.setVisibility(View.VISIBLE);
     }
 
     private void setDrawerToggle() {
@@ -147,9 +162,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
         if (acct != null) {
             showProgress();
             account = acct;
-            name.setText(account.getDisplayName());
-            email.setText(account.getEmail());
-            image.setImageURI(account.getPhotoUrl());
+            setProfileInfo(acct.getDisplayName(),acct.getEmail(),acct.getPhotoUrl()!=null?acct.getPhotoUrl().toString():null);
             toolbar.setVisibility(View.VISIBLE);
             PermissionUtil.requestPermissions(this, this);
         }
@@ -175,8 +188,8 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
                 if(response.isSuccess()) {
                     PreferenceUtil.getInstance(MainActivity.this).saveAccount(response.getUser());
                     loadHomeFragment();
-                }  {
-                    if(response.getResponseMsg().toLowerCase().contains("phone")){
+                }  else{
+                    if(response.getResponseMsg().toLowerCase().contains("mobile")){
                         params.remove("mobile_number");
                         phoneNumberExist(params);
                     }
@@ -254,6 +267,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
     public void onLogoutEvent(LogoutEvent event) {
         googleSignInClient().signOut();
         PreferenceUtil.getInstance(this).clearAllPreferences();
+        user=null;
         deleteFCMToken();
         loadWelcomeFragment();
     }
@@ -271,15 +285,16 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
 
     @Override
     public void onPermissionsGranted() {
-        if (PreferenceUtil.getInstance(this).getAccount().getId() == null) {
-            Uri photoUri = account.getPhotoUrl();
+        if (user == null || user.getId()==null) {
+            String photoUri = account.getPhotoUrl()!=null?account.getPhotoUrl().toString():null;
             HashMap<String, Object> params = new HashMap<>();
             params.put("email", account.getEmail());
             params.put("password", account.getEmail());
             params.put("first_name", account.getGivenName());
             params.put("last_name", account.getFamilyName());
             params.put("user_type", Constant.KIDS_HELPER); // 2 means kids Helper.
-            params.put("image_link", (photoUri != null && photoUri.toString().isEmpty()) ? photoUri.toString() : null);
+            if(photoUri!=null)
+            params.put("image_link",  photoUri);
             params.put("fcm_key", PreferenceUtil.getInstance(this).getPreference(PREF_NOTIFICATION_TOKEN));
             extractPhoneNumber(params);
         }
@@ -296,8 +311,8 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             List<SubscriptionInfo> subscription = SubscriptionManager.from(getApplicationContext()).getActiveSubscriptionInfoList();
             if(subscription==null || subscription.isEmpty()){
-                    getMobileNumberFromUser(params,false);
-                    return;
+                getMobileNumberFromUser(params,false);
+                return;
             }
             for (int i = 0; i < subscription.size(); i++) {
                 SubscriptionInfo info = subscription.get(i);
@@ -329,7 +344,7 @@ public class MainActivity extends BaseActivity implements PermissionUtil.Permiss
         title.setText(!phoneExist?R.string.enter_mobile_number:R.string.enter_other_mobile_number);
         final EditText userInputDialogEditText = mView.findViewById(R.id.userInputDialog);
         userInputDialogEditText.setInputType(InputType.TYPE_CLASS_PHONE);
-        userInputDialogEditText.setHint("+123-456-7890");
+        userInputDialogEditText.setHint("Mobile Number");
         alertDialogBuilderUserInput.setCancelable(false)
                 .setPositiveButton("OK", (dialogBox, id) -> {
                     String phoneNumber = userInputDialogEditText.getText().toString();

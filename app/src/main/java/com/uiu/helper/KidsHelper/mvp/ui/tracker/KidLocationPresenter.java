@@ -31,7 +31,7 @@ public class KidLocationPresenter implements KidLocationContract.Presenter {
             public void onDataReceived(GetDirectionsResponse data) {
                 directionsItems.clear();
                 directionsItems.addAll(data.getDirectionsList());
-                mView.onGeofenceLoaded(directionsItems);
+                mView.onGeofenceLoaded(directionsItems,true);
             }
 
             @Override

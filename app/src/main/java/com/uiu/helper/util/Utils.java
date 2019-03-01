@@ -18,6 +18,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.telephony.TelephonyManager;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.DisplayMetrics;
@@ -621,16 +623,15 @@ public class Utils {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
     public static boolean isValidMobileNumber(String phone) {
-        if (TextUtils.isEmpty(phone))
+        if (TextUtils.isEmpty(phone)|| phone.length()<8)
             return false;
-        final PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+      /*  final PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
         try {
             Phonenumber.PhoneNumber phoneNumber = phoneNumberUtil.parse(phone, Locale.getDefault().getCountry());
-           // PhoneNumberUtil.PhoneNumberType phoneNumberType = phoneNumberUtil.getNumberType(phoneNumber);
-           // return phoneNumberType == PhoneNumberUtil.PhoneNumberType.MOBILE;
            return phoneNumberUtil.isValidNumber(phoneNumber);
         } catch (final Exception e) {
-        }
-        return false;
+        }*/
+        return true;
     }
+
 }

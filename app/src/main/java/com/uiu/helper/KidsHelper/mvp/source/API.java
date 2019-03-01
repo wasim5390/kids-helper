@@ -43,6 +43,9 @@ public interface API {
     @POST("users/register")
     Call<GetAccountResponse> createAccount(@Body HashMap<String, Object> params);
 
+    @POST("users/update_fcm_key")
+    Call<BaseResponse> updateFirebaseToken(@Query("user_id") String userId, @Query("fcm_key") String fcmKey);
+
     @POST("invitations/send")
     Call<InvitationResponse> sendInvite(@Query("email") String email,@Query("helper_id") String helperId);
 

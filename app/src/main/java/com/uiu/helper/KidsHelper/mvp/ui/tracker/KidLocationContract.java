@@ -9,7 +9,7 @@ import java.util.List;
 public class KidLocationContract  {
     interface View extends BaseView<Presenter>{
         void showMessage(String message);
-        void onGeofenceLoaded(List<DirectionsItem> directions);
+        void onGeofenceLoaded(List<DirectionsItem> directions,boolean firstLoad);
         void onKidLocationReceived(Tracker tracker);
     }
 

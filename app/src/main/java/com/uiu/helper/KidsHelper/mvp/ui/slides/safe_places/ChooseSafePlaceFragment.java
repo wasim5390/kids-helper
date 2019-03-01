@@ -45,7 +45,8 @@ import butterknife.BindView;
 public class ChooseSafePlaceFragment extends BaseFragment implements View.OnClickListener,
         OnMapReadyCallback {
 
-    private static final String TAG = "ChooseDestination";
+
+    public static final String TAG = "ChooseDestination";
     @BindView(R.id.choose_destination_search_on_map)
     TextView mSearchOnMapBtn;
     @BindView(R.id.choose_destination_create)
@@ -229,4 +230,5 @@ public class ChooseSafePlaceFragment extends BaseFragment implements View.OnClic
         mMap.snapshot(callback);
 
        }
+
 }

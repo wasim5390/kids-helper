@@ -1,5 +1,6 @@
 package com.uiu.helper.KidsHelper.firebasefcm;
 
+import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,6 +42,11 @@ import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -193,44 +200,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if(contact!=null) {
             ContactEntity contactEntity = new ContactEntity();
             contactEntity = contactEntity.setFCMContact(contact);
-            if(!sender.getUserType().equals(Constant.KIDS_PRIMARY_HELPER))
-                return;
-            if( contactEntity.getRequestStatus()!=Constant.ACCEPTED)
-                return;
-            setListeners(expandedView,builder,getApplicationContext(),notificationType,nId, contactEntity, null ,sender.getId());
+            if(Integer.parseInt(sender.getUserType())!=(Constant.KIDS_PRIMARY_HELPER)
+            || contactEntity.getRequestStatus()==Constant.ACCEPTED
+            )
+                    setListeners(expandedView,builder,getApplicationContext(),notificationType,nId, contactEntity, null ,sender,sender.getId());
         }else {
-            setListeners(expandedView,builder,getApplicationContext(),notificationType,nId, null, kidId,helperId);
+            setListeners(expandedView,builder,getApplicationContext(),notificationType,nId, null, kidId,sender,helperId);
         }
 
-
-        NotificationManager notificationManager = getNotificationManager(getApplicationContext());
+        NotificationManager notificationManager = getNotificationManager(this);
         createChannel(notificationManager);
         new Handler(Looper.getMainLooper()).post(() -> {
 
             if(profileImage==null || profileImage.isEmpty())
                 profileImage="t.com";
-            Picasso.with(getApplicationContext()).load(profileImage).into(new Target() {
-                @Override
-                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    bitmap = Bitmap.createScaledBitmap(bitmap, 96, 96, false);
-                    builder.setLargeIcon(bitmap);
-                    Notification notification = builder.build();
-                    notificationManager.notify(nId, notification);
-                }
+            new generatePictureNotification(this,builder,notificationManager,nId,profileImage).execute();
 
-                @Override
-                public void onBitmapFailed(Drawable errorDrawable) {
-                    Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.placeholder_sqr);
-                    builder.setLargeIcon(bitmap);
-                    Notification notification = builder.build();
-                    notificationManager.notify(nId, notification);
-                }
 
-                @Override
-                public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-                }
-            });
         });
 
     }
@@ -280,7 +266,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Picasso.with(getApplicationContext()).load(profileImage).into(new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    bitmap = Bitmap.createScaledBitmap(bitmap, 96, 96, false);
+                    bitmap = Bitmap.createScaledBitmap(bitmap, 70, 70, false);
                     builder.setLargeIcon(bitmap);
                     Notification notification = builder.build();
                     notificationManager.notify(nId, notification);
@@ -318,8 +304,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             chan1.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
             manager.createNotificationChannel(chan1);
         }
+
     }
-    public void setListeners(RemoteViews view,NotificationCompat.Builder builder,Context context,int notificationType, int nId, ContactEntity contactEntity, String kidId,String helperId) {
+    public void setListeners(RemoteViews view,NotificationCompat.Builder builder,Context context,int notificationType, int nId, ContactEntity contactEntity, String kidId,NotificationSender sender,String helperId) {
+       if(contactEntity!=null
+               && contactEntity.getRequestStatus()==Constant.ACCEPTED
+               && Integer.parseInt(sender.getUserType())==Constant.KIDS_PRIMARY_HELPER)
+        return;
         Intent intentApprove = new Intent(AppConstants.NOTIFICATION.APPROVE);
         Intent intentReject = new Intent(AppConstants.NOTIFICATION.REJECT);
 
@@ -370,5 +361,58 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Notification n = builder.build();
         manager.notify(NotificationID.getID(), n);
 
+    }
+
+
+
+
+
+    public class generatePictureNotification extends AsyncTask<String, Void, Bitmap> {
+
+        private Context mContext;
+        private String  imageUrl;
+        private NotificationCompat.Builder builder;
+        private NotificationManager manager;
+        private int notificationId;
+        public generatePictureNotification(Context context, NotificationCompat.Builder builder,NotificationManager manager, int id,String imageUrl) {
+            super();
+            this.mContext = context;
+            this.builder = builder;
+            this.notificationId = id;
+            this.imageUrl=imageUrl;
+            this.manager=manager;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+
+            InputStream in;
+            try {
+                URL url = new URL(this.imageUrl);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
+                in = connection.getInputStream();
+                Bitmap myBitmap = BitmapFactory.decodeStream(in);
+                return Bitmap.createScaledBitmap(myBitmap, 70, 70, false);
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            super.onPostExecute(result);
+
+            builder.setLargeIcon(result!=null?result:BitmapFactory.decodeResource(getResources(),R.drawable.placeholder_sqr));
+            Notification notification = builder.build();
+            manager.notify(notificationId, notification);
+
+        }
     }
 }

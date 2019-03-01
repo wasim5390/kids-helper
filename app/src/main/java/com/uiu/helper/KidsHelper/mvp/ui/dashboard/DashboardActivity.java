@@ -4,6 +4,7 @@ package com.uiu.helper.KidsHelper.mvp.ui.dashboard;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
@@ -26,6 +27,8 @@ import com.uiu.helper.KidsHelper.mvp.model.Setting;
 import com.uiu.helper.KidsHelper.mvp.model.SlideItem;
 import com.uiu.helper.KidsHelper.mvp.model.User;
 import com.uiu.helper.KidsHelper.mvp.ui.settings.SettingActivity;
+import com.uiu.helper.KidsHelper.mvp.ui.slides.safe_places.ChooseSafePlaceFragment;
+import com.uiu.helper.KidsHelper.mvp.ui.slides.safe_places.SafePlacesFragment;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 import com.uiu.helper.R;
 import com.uiu.helper.util.Utils;
@@ -142,5 +145,11 @@ public class DashboardActivity extends BaseActivity implements BaseFragment.INav
 
         int slideIndexToMove =dashboardFragment.pagerAdapter.getSlideIndex(slideType);
         dashboardFragment.fragmentPager.setCurrentItem(slideIndexToMove,true);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
     }
 }
