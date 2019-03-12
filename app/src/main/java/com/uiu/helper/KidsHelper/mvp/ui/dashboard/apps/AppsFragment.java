@@ -9,10 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
@@ -29,6 +25,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+import androidx.appcompat.widget.SearchView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 
@@ -67,7 +67,7 @@ public class AppsFragment extends BaseFragment implements AppsContract.View,Apps
         searchView.setOnQueryTextListener(this);
 
         try {
-            AutoCompleteTextView searchTextView = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+            AutoCompleteTextView searchTextView = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
             searchTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.grey_dark));
         }catch (Exception e){}
         showProgress();

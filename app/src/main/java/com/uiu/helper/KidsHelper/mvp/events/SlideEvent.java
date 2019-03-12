@@ -1,6 +1,5 @@
 package com.uiu.helper.KidsHelper.mvp.events;
 
-import android.support.constraint.ConstraintLayout;
 
 import com.uiu.helper.KidsHelper.mvp.Constant;
 import com.uiu.helper.KidsHelper.mvp.model.SlideItem;

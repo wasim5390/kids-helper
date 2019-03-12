@@ -1,7 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard.contact;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,8 @@ import com.uiu.helper.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.ViewHolder>{

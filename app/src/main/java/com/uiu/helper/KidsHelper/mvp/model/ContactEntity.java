@@ -26,7 +26,7 @@ public class ContactEntity implements Serializable{
     private String email;
     @SerializedName(value = "photo_uri" ,alternate= "image_link")
     private String photoUri;
-
+    public boolean isSelectedForSharing;
     @SerializedName("contact_icon")
     private String base64ProfilePic;
     @SerializedName("lookupId")
@@ -209,5 +209,11 @@ public class ContactEntity implements Serializable{
     public void setHasAccess(boolean hasAccess) {
         this.hasAccess = hasAccess;
     }
+    public boolean isSelectedForSharing() {
+        return isSelectedForSharing;
+    }
 
+    public void setSelectedForSharing(boolean selectedForSharing) {
+        isSelectedForSharing = selectedForSharing;
+    }
 }

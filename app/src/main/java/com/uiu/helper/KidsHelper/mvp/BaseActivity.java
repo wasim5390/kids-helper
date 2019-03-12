@@ -13,15 +13,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.design.internal.BottomNavigationMenuView;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -33,12 +25,15 @@ import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import com.squareup.picasso.Picasso;
@@ -48,18 +43,25 @@ import com.uiu.helper.KidsHelper.mvp.model.User;
 import com.uiu.helper.KidsHelper.mvp.ui.ConfirmationCallback;
 import com.uiu.helper.KidsHelper.mvp.ui.InvitationConfirmationCallback;
 import com.uiu.helper.KidsHelper.mvp.ui.WelcomeFragment;
+import com.uiu.helper.KidsHelper.mvp.ui.c_me.AudioPlayBackView;
+import com.uiu.helper.KidsHelper.mvp.ui.c_me.VideoPlaybackActivity;
 import com.uiu.helper.KidsHelper.mvp.ui.home.HomeListFragment;
 import com.uiu.helper.KidsHelper.mvp.ui.home.HomeListPresenter;
 import com.uiu.helper.KidsHelper.mvp.ui.invite.InviteFragment;
-import com.uiu.helper.KidsHelper.mvp.ui.media_notification.AudioPlayBackView;
 import com.uiu.helper.KidsHelper.mvp.ui.media_notification.UploadFileService;
-import com.uiu.helper.KidsHelper.mvp.ui.media_notification.VideoPlaybackActivity;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 import com.uiu.helper.R;
 
 import com.uiu.helper.util.Utils;
 
 import java.io.IOException;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 /**
@@ -85,7 +87,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
 
     @Override
     protected void onStart() {
-        registerReceiver(onDownloadComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
         super.onStart();
 
     }
@@ -98,7 +100,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
 
     @Override
     protected void onDestroy() {
-        unregisterReceiver(onDownloadComplete);
+
         super.onDestroy();
     }
 
@@ -178,7 +180,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
     }
 
 
-    protected void updateBottomNavigationViewIconSize(BottomNavigationView bottomNavigationView){
+/*    protected void updateBottomNavigationViewIconSize(BottomNavigationView bottomNavigationView){
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
         for (int i = 0; i < menuView.getChildCount(); i++) {
             final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
@@ -188,7 +190,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
             layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
             iconView.setLayoutParams(layoutParams);
         }
-    }
+    }*/
 
     public void showConfirmationDialog(String title, String body, String slideId, String itemId, ConfirmationCallback confirmationCallback){
 
@@ -285,123 +287,23 @@ public abstract class BaseActivity extends AppCompatActivity implements Constant
     }
 
 
-    public void showMediaNotification( ShareEvent shareEvent){
-        int type = shareEvent.getMediaType();
-
-        int notificationHeader = R.drawable.notification_header_bg;
-        int btnColor = R.color.notification_accepted;
-        Dialog dialog = new Dialog(this,R.style.Theme_Dialog);
-        dialog.setContentView(R.layout.notification_view_media);
-        dialog.setCancelable(false);
-        dialog.findViewById(R.id.header).setBackgroundResource(notificationHeader);
-        if(type==Constant.MEDIA_IMAGE) {
-            btnColor = R.color.notification_accepted;
-            dialog.findViewById(R.id.image).setVisibility(View.VISIBLE);
-            dialog.findViewById(R.id.btnDownloadVideo).setVisibility(View.GONE);
-            dialog.findViewById(R.id.btnDownloadAudio).setVisibility(View.GONE);
-        }
-        else if(type == Constant.MEDIA_AUDIO) {
-            dialog.findViewById(R.id.image).setVisibility(View.GONE);
-            dialog.findViewById(R.id.btnDownloadVideo).setVisibility(View.GONE);
-            dialog.findViewById(R.id.btnDownloadAudio).setVisibility(View.VISIBLE);
-
-        }else if(type == Constant.MEDIA_VIDEO){
-            dialog.findViewById(R.id.image).setVisibility(View.VISIBLE);
-            dialog.findViewById(R.id.btnDownloadVideo).setVisibility(View.VISIBLE);
-            dialog.findViewById(R.id.btnDownloadAudio).setVisibility(View.GONE);
-        }
-
-        TextView tvMessage;
-        SimpleDraweeView ivSender;
-        ImageView image;
-        Button okBtn;
-        ivSender =  dialog.findViewById(R.id.ivSender);
-        tvMessage =  dialog.findViewById(R.id.tvNotificationTitle);
-        image = dialog.findViewById(R.id.image);
-        okBtn =  dialog.findViewById(R.id.btnOk);
-
-        okBtn.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),btnColor));
-        tvMessage.setText(shareEvent.getTitle());
-        ivSender.setImageURI(shareEvent.getSender().getSenderImage());
-       // Picasso.with(getApplicationContext()).load(shareEvent.getSender().getSenderImage()).placeholder(R.drawable.avatar_male2).into(ivSender);
-        if(type==MEDIA_IMAGE)
-            Picasso.with(getApplicationContext()).load(shareEvent.getFileUrl()).placeholder(R.drawable.placeholder_sqr).into(image);
-        if(type==MEDIA_VIDEO) {
-            image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            Picasso.with(getApplicationContext()).load(shareEvent.getThumbnailUrl()).placeholder(R.drawable.placeholder_sqr).into(image);
-            okBtn.setText("Download");
-        }
-        if(type==MEDIA_AUDIO) {
-            okBtn.setText("Download");
-        }
-
-        dialog.show();
-
-        okBtn.setOnClickListener(v -> {
-            if(type==MEDIA_AUDIO | type==MEDIA_VIDEO | type==MEDIA_IMAGE)
-                UploadFileService.downloadMedia(getApplicationContext(), type, shareEvent.getFileUrl(), shareEvent.getCreatedAt());
-            dialog.dismiss();
-        });
 
 
-    }
+    public void showAudioNotification(String uri, Dialog dialog, LinearLayout container){
 
-
-
-
-    public void showAudioNotification(String uri){
-
-        Dialog dialog = new Dialog(this,R.style.Theme_Dialog);
         LayoutInflater inflater = getLayoutInflater();
         AudioPlayBackView view = (AudioPlayBackView) inflater.inflate(R.layout.audio_playback_view,null);
-        view.setDataSource(Uri.parse(uri));
-        dialog.setContentView(view);
-        dialog.setCancelable(true);
-        dialog.show();
-        dialog.findViewById(R.id.btnCancel).setOnClickListener(v -> {
-            dialog.dismiss();
-        });
+        view.setDataSource(Uri.parse(uri),false);
+        view.findViewById(R.id.btnCancel).setVisibility(View.GONE);
+        container.removeAllViews();
+        container.addView(view);
+
         dialog.setOnDismissListener(dialog1 -> {
             view.stopMediaPlayer();
         });
     }
-    BroadcastReceiver onDownloadComplete=new BroadcastReceiver() {
-        public void onReceive(Context ctxt, Intent intent) {
-            Bundle extras = intent.getExtras();
-            DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-            DownloadManager.Query q = new DownloadManager.Query();
-            q.setFilterById(extras.getLong(DownloadManager.EXTRA_DOWNLOAD_ID));
-            Cursor c = manager.query(q);
-
-            if (c.moveToFirst()) {
-                int status = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
-                if (status == DownloadManager.STATUS_SUCCESSFUL) {
-                    // process download
-                    final String uriString = c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
-                    final String mimeStr = c.getString(c.getColumnIndex(DownloadManager.COLUMN_MEDIA_TYPE));
-
-                    String type = getMimeType(Uri.parse(uriString).getPath());
-
-                    Log.i("Download URI: ",uriString);
-                    if(type!=null){
-                        Log.i("Download MIME: ",type);
-                        if(type.toLowerCase().startsWith("audio")){
-                            showAudioNotification(uriString);
-                        }
-
-                        if(type.toLowerCase().startsWith("video")){
-                            intent = new Intent(getApplicationContext(),VideoPlaybackActivity.class);
-                            intent.putExtra("uri",uriString);
-                            startActivity(intent);
-                        }
-                    }
-
-                }
-            }
 
 
-        }
-    };
 
     // url = file path or whatever suitable URL you want.
     public static String getMimeType(String url) {

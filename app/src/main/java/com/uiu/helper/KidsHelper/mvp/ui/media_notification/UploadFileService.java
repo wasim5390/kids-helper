@@ -60,13 +60,13 @@ public class UploadFileService extends IntentService implements Constant {
      * @see IntentService
      */
     // TODO: Customize helper method
-    public static void uploadMedia(Context context, String filePath, int type, String contactId) {
+    public static void uploadMedia(Context context, String filePath, int type, String userId) {
         Intent intent = new Intent(context, UploadFileService.class);
 
         intent.setAction(ACTION_UPLOAD_MEDIA);
         intent.putExtra(EXTRA_PARAM_FILE_PATH, filePath);
         intent.putExtra(EXTRA_PARAM_FILE_TYPE, type);
-        intent.putExtra(EXTRA_PARAM_ID, contactId);
+        intent.putExtra(EXTRA_PARAM_ID, userId);
         context.startService(intent);
     }
 
@@ -110,14 +110,14 @@ public class UploadFileService extends IntentService implements Constant {
      * Handle action Foo in the provided background thread with the provided
      * parameters.
      */
-    private void handleUploadMedia(String path, int type, String contactId) {
+    private void handleUploadMedia(String path, int type, String receiverId) {
         if(path==null)
             return;
 
         File file = new File(path);
         HashMap<String, RequestBody> params = new HashMap<>();
         RequestBody fBody = null;
-        Log.e("contactId",contactId);
+        Log.e("receiverId",receiverId);
         if (type == MEDIA_VIDEO) {
             fBody = RequestBody.create(MediaType.parse("video/*"), file);
             Bitmap thumbnail = ThumbnailUtils.createVideoThumbnail(path, MediaStore.Images.Thumbnails.FULL_SCREEN_KIND);
@@ -132,12 +132,12 @@ public class UploadFileService extends IntentService implements Constant {
 
         RequestBody mediaType = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(type));
         RequestBody user_id = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(PreferenceUtil.getInstance(this).getAccount().getId()));
-        RequestBody contact_id = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(contactId));
+        RequestBody receiver_Id = RequestBody.create(MediaType.parse("text/plain"), String.valueOf(receiverId));
 
 
         params.put("type", mediaType);
         params.put("user_id", user_id);
-        params.put("contact_id",contact_id);
+        params.put("receiver_id",receiver_Id);
 
         Repository.getInstance().shareMediaFile(params, body, new DataSource.GetDataCallback<BaseResponse>() {
             @Override

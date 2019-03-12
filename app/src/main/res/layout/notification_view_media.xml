@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/transparent"
-    android:padding="30dp"
+    android:padding="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -23,12 +24,10 @@
             android:id="@+id/ivSender"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:placeholderImage="@drawable/avatar_male2"
+            app:placeholderImage="@drawable/wiser_avatar"
             app:roundingBorderWidth="3dp"
-            app:roundBottomStart="false"
-            app:roundBottomEnd="false"
             app:roundAsCircle="true"
-            app:roundingBorderColor="@color/grey_light"
+            app:roundingBorderColor="@color/Gray"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
@@ -46,80 +45,107 @@
             android:padding="10dp"
             android:textColor="@color/white"
             />
-
+        <ImageView
+            android:id="@+id/ivMediaType"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_video_camera"
+            android:visibility="gone"
+            android:tint="@color/white"
+            />
     </LinearLayout>
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="20dp"
+        android:paddingBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/notification_body_bg"
         android:visibility="visible"
         >
-
         <ImageView
             android:id="@+id/image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:src="@drawable/placeholder_sqr"
-            app:layout_constraintDimensionRatio="H,.8"
-            android:layout_marginTop="20dp"
+            app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/btnOk"
+            app:layout_constraintBottom_toTopOf="@+id/btnsView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:adjustViewBounds="true"
+            android:visibility="gone"
+            />
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnsView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:visibility="visible"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
             />
-        <ImageButton
-            android:id="@+id/btnDownloadVideo"
+        <LinearLayout
+            android:id="@+id/container_audio"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:srcCompat="@drawable/ic_video_camera"
-            app:layout_constraintTop_toTopOf="@+id/image"
-            app:layout_constraintBottom_toBottomOf="@+id/image"
-            app:layout_constraintStart_toStartOf="@+id/image"
-            app:layout_constraintEnd_toEndOf="@+id/image"
-            android:background="@color/black_trans"
-            android:adjustViewBounds="true"
-            android:visibility="gone"
-            android:tint="@color/white"
-            />
-
-        <ImageButton
-            android:id="@+id/btnDownloadAudio"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintDimensionRatio="H,.7"
-            app:srcCompat="@drawable/ic_audio_small_black"
-            app:layout_constraintTop_toBottomOf="@+id/headerView"
-            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintDimensionRatio="H,4:2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnsView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/transparent"
-            android:adjustViewBounds="true"
             android:visibility="gone"
-
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
             />
 
-        <Button
-            android:id="@+id/btnOk"
-            android:layout_width="140dp"
+        <LinearLayout
+            android:id="@+id/btnsView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/notification_accepted"
-           app:layout_constraintTop_toBottomOf="@+id/image"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="20dp"
-            android:text="OK"
-            android:textColor="@color/white"
-            />
+            android:weightSum="10"
+            >
+            <Button
+                android:id="@+id/btnReply"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:background="@color/notification_accepted"
+                android:text="Reply"
+                android:textColor="@color/white"
+                android:layout_marginRight="2dp"
+                android:visibility="gone"
 
-    </android.support.constraint.ConstraintLayout>
+                />
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:background="@color/notification_accepted"
 
+                android:layout_marginLeft="2dp"
+                android:text="OK"
+                android:textColor="@color/white"
+                />
 
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

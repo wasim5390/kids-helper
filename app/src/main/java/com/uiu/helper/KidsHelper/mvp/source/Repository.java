@@ -1,7 +1,7 @@
 package com.uiu.helper.KidsHelper.mvp.source;
 
-import android.support.annotation.NonNull;
 
+import com.uiu.helper.KidsHelper.mvp.model.CmeeChatModel;
 import com.uiu.helper.KidsHelper.mvp.model.ContactEntity;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationsListResponse;
 import com.uiu.helper.KidsHelper.mvp.model.response.BaseResponse;
@@ -22,6 +22,7 @@ import com.uiu.helper.KidsHelper.mvp.ui.slides.reminder.ReminderEntity;
 
 import java.util.HashMap;
 
+import androidx.annotation.NonNull;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.http.Part;
@@ -179,7 +180,20 @@ public class Repository implements DataSource {
             }
         });
     }
+    @Override
+    public void getFavContacts(String id, GetDataCallback<GetFavContactResponse> callback) {
+        mRemoteDataSource.getFavContacts(id,new GetDataCallback<GetFavContactResponse>() {
+            @Override
+            public void onDataReceived(GetFavContactResponse data) {
+                callback.onDataReceived(data);
+            }
 
+            @Override
+            public void onFailed(int code, String message) {
+                callback.onFailed(code, message);
+            }
+        });
+    }
     @Override
     public void getUserSlides(String userId, GetDataCallback<GetAllSlidesResponse> callback) {
         mRemoteDataSource.getUserSlides(userId, new GetDataCallback<GetAllSlidesResponse>() {
@@ -675,6 +689,24 @@ public class Repository implements DataSource {
             @Override
             public void onFailed(int code, String message) {
                 callback.onFailed(0,message);
+            }
+        });
+    }
+
+    @Override
+    public void getCmeeHistoryList(String userId,String kidId, String pageNumber, GetDataCallback<CmeeChatModel> callback) {
+        mRemoteDataSource.getCmeeHistoryList(userId,kidId,pageNumber ,new GetDataCallback<CmeeChatModel>() {
+            @Override
+            public void onDataReceived(CmeeChatModel data) {
+                if(data.isSuccess())
+                    callback.onDataReceived(data);
+                else
+                    callback.onFailed(data.getHttpCode(),data.getResponseMsg());
+            }
+
+            @Override
+            public void onFailed(int code, String message) {
+                callback.onFailed(code,message);
             }
         });
     }

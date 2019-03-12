@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -47,6 +47,8 @@
                 android:layout_height="60dp"
                 android:layout_toLeftOf="@+id/slide_remove_item"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="20dp"
                 android:layout_gravity="center" />
             <TextView
@@ -58,19 +60,21 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/image"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:textSize="20sp"
                 android:padding="15dp"
                 android:textColor="@color/Black"
                 android:fontFamily="@font/droid_serif"
                 android:text="@string/remove_contact"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <View
             android:background="@color/Gray"
             android:layout_width="200dp"
             android:layout_gravity="center"
             android:layout_height="1dp"/>
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/remove_slide_view"
@@ -83,6 +87,8 @@
                 android:layout_toLeftOf="@+id/remove_slide"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_gravity="center" />
             <TextView
                 android:id="@+id/remove_slide"
@@ -93,6 +99,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/image2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:text="@string/remove_slide"
                 android:textSize="20sp"
                 android:padding="15dp"
@@ -107,9 +115,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_height="1dp"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -120,6 +128,8 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_gravity="center" />
             <TextView
                 android:id="@+id/slide_cancel"
@@ -129,12 +139,14 @@
                 android:singleLine="true"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/image3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:text="@string/header_button_cancel"
                 android:textSize="20sp"
                 android:padding="15dp"
                 android:textColor="@color/Black"
                 android:fontFamily="@font/droid_serif"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <View
             android:background="@color/Gray"
             android:layout_width="200dp"

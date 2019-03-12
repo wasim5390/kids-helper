@@ -2,11 +2,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.slides.notifications_list;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
@@ -34,15 +29,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static android.support.v7.widget.DividerItemDecoration.HORIZONTAL;
-import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
+import static android.widget.LinearLayout.VERTICAL;
 
 public class NotificationsListFragment extends BaseFragment implements NotificationsListContract.View,
         EndlessRecyclerViewScrollListener.OnLoadMore,
@@ -116,7 +116,7 @@ public class NotificationsListFragment extends BaseFragment implements Notificat
 
     private void setAdapter() {
         adapter = new NotificationsListAdapter(getContext(),new ArrayList<>(),this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayout.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         scrollListener = new EndlessRecyclerViewScrollListener(layoutManager,this);
         rvNotifications.setLayoutManager(layoutManager);
         rvNotifications.addOnScrollListener(scrollListener);
@@ -141,12 +141,13 @@ public class NotificationsListFragment extends BaseFragment implements Notificat
 
     @Override
     public void onLoadedMore(List<NotificationsItem> notificationsItems) {
+       // Collections.reverse(notificationsItems);
         adapter.addItems(notificationsItems);
     }
 
     @Override
     public void onNotificationLoaded(List<NotificationsItem> notificationsItems) {
-
+       // Collections.reverse(notificationsItems);
         adapter.setSlideItems(notificationsItems);
         getView().findViewById(R.id.tvMsg).setVisibility(notificationsItems.isEmpty()?View.VISIBLE:View.GONE);
         updateListView(historyView);
@@ -154,7 +155,7 @@ public class NotificationsListFragment extends BaseFragment implements Notificat
 
     @Override
     public void onNotificationHistoryLoaded(List<NotificationsItem> notificationsItems) {
-
+       // Collections.reverse(notificationsItems);
         adapter.setSlideItems(notificationsItems);
         getView().findViewById(R.id.tvMsg).setVisibility(notificationsItems.isEmpty()?View.VISIBLE:View.GONE);
         updateListView(historyView);

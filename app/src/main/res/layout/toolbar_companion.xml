@@ -1,4 +1,4 @@
-<android.support.v7.widget.Toolbar
+<androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="50dp"
     android:paddingEnd="@dimen/home_side_margin"
@@ -37,4 +37,4 @@
 
     </RelativeLayout>
 
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>

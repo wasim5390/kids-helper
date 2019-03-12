@@ -1,5 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.source;
 
+import com.uiu.helper.KidsHelper.mvp.model.CmeeChatModel;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationsListResponse;
 import com.uiu.helper.KidsHelper.mvp.model.response.BaseResponse;
 import com.uiu.helper.KidsHelper.mvp.model.response.GetAccountResponse;
@@ -109,6 +110,9 @@ public interface API {
     @GET("contacts/slide_contacts")
     Call<GetFavContactResponse> getContactSlide(@Query ("slide_id") String var);
 
+    @GET("contacts/registered_contacts") // Registered users
+    Call<GetFavContactResponse> getFavoriteContacts(@Query("user_id") String userId);
+
     @DELETE("contacts/{id}")
     Call<BaseResponse> removeContactFromSlide(@Path("id") String id, @Query("helper_id") String helperId);
 
@@ -177,6 +181,10 @@ public interface API {
     // ================ Status Update ================//
     @POST("slides/update_request_status")
     Call<BaseResponse> updateSlideObjectStatus(@Body HashMap<String,Object> params);
+
+
+    @GET("contacts/chat")
+    Call<CmeeChatModel> getCmeeHistory(@Query("user_id") String userId, @Query("kid_id") String kidId);
 
 
 }

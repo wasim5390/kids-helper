@@ -3,9 +3,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.slides.sleep;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatSeekBar;
-import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +31,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -45,7 +44,7 @@ public class SleepFragment extends BaseFragment implements SleepContract.View {
     boolean mSleepMode,mSleepWithTimer;
 
     @BindView(R.id.swSleep)
-    SwitchCompat  mSleepIcon;
+    SwitchCompat mSleepIcon;
 
     @BindView(R.id.cbTimer)
     CheckBox cbTimer;

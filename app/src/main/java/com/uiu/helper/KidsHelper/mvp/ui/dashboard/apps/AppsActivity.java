@@ -1,9 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard.apps;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,6 +10,9 @@ import com.uiu.helper.KidsHelper.mvp.BaseActivity;
 import com.uiu.helper.KidsHelper.mvp.Injection;
 import com.uiu.helper.R;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

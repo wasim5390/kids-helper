@@ -105,7 +105,7 @@ public class NotificationsListPresenter implements NotificationsListContract.Pre
                         if(currentPage==0) {
                             mDataList.clear();
                             mDataList.addAll(response.getData().getNotifications());
-                            Collections.reverse(mDataList);
+
                             if(historyToLoad)
                                 view.onNotificationHistoryLoaded(mDataList);
                             else

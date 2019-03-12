@@ -384,5 +384,11 @@
     <string name="sleep_mode_instruction">Place your kid\'s device in sleep mode by tapping \'on\'. If you want the device to \'wake up\' automatically, set the timer below.</string>
     <string name="enter_mobile_number">Please enter valid mobile number</string>
     <string name="enter_other_mobile_number">Another user registered with this mobile number, Please provide other mobile number!</string>
+    <string name="label_emoji">Emoji</string>
+    <string name="label_sticker">Sticker</string>
+    <string name="label_filter">Filter</string>
+    <string name="label_adjust">Adjust</string>
+    <string name="audio">Audio</string>
+    <string name="chat_history">Chat History</string>
 
 </resources>

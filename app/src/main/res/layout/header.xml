@@ -136,12 +136,14 @@
                 android:background="@color/Gray"
                 android:layout_width="200dp"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_height="1dp"/>
             <RelativeLayout
                 android:id="@+id/rlUpgrade"
                 android:layoutDirection="ltr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -197,11 +199,13 @@
                 android:background="@color/Gray"
                 android:layout_width="200dp"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_height="1dp"/>
             <RelativeLayout
                 android:layoutDirection="ltr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_marginLeft="10dp"
@@ -253,11 +257,13 @@
                 android:background="@color/Gray"
                 android:layout_width="200dp"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_height="1dp"/>
             <RelativeLayout
                 android:layoutDirection="ltr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_marginLeft="10dp"
@@ -340,11 +346,13 @@
                 android:background="@color/Gray"
                 android:layout_width="200dp"
                 android:layout_gravity="center"
+                android:visibility="gone"
                 android:layout_height="1dp"/>
             <RelativeLayout
                 android:layoutDirection="ltr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_marginLeft="10dp"

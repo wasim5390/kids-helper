@@ -1,17 +1,10 @@
 package com.uiu.helper.KidsHelper.mvp.ui.settings;
 
-import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatSeekBar;
-import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +36,9 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatSeekBar;
+import androidx.appcompat.widget.SwitchCompat;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -149,15 +145,15 @@ public class SettingFragment extends BaseFragment implements SettingContract.Vie
 
             mWifiOn = setting.isWifiEnable();
             mWifiIcon.setChecked(mWifiOn);
-            mLocationIcon.setChecked(mLocationOn);
+         //   mLocationIcon.setChecked(mLocationOn);
             mBluetoothIcon.setChecked(mBluetooth);
 
-            switchColor(mLocationIcon);
+        //    switchColor(mLocationIcon);
             switchColor(mBluetoothIcon);
             switchColor(mWifiIcon);
 
 
-            mLocationIcon.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      /*      mLocationIcon.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 mLocationOn = isChecked;
                 Log.d("settingsTest", "locationOn: " + mLocationOn);
                 //if condition
@@ -165,7 +161,7 @@ public class SettingFragment extends BaseFragment implements SettingContract.Vie
                 mLocationIcon.setChecked(mLocationOn);
                 setting.setLocationEnable(isChecked);
 
-            });
+            });*/
 
             mWifiIcon.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 mWifiOn = isChecked;

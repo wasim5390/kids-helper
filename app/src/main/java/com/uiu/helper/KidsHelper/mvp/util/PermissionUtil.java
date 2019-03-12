@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
 
@@ -18,6 +17,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.util.List;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by sidhu on 6/8/2018.
@@ -34,9 +35,9 @@ public class PermissionUtil {
     public static void requestPermissions(Activity activity,PermissionCallback permissionCallback) {
         Dexter.withActivity(activity)
                 .withPermissions(
-                        Manifest.permission.READ_CALL_LOG, Manifest.permission.READ_CONTACTS,
-                        Manifest.permission.WRITE_CALL_LOG,Manifest.permission.WRITE_CONTACTS,
-                        Manifest.permission.READ_PHONE_STATE,Manifest.permission.READ_SMS,Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new MultiplePermissionsListener() {
 

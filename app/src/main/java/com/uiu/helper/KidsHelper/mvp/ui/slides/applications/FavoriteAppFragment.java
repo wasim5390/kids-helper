@@ -3,9 +3,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.slides.applications;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -32,6 +29,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -76,7 +76,7 @@ public class FavoriteAppFragment extends BaseFragment implements FavoriteAppCont
 
     public void setRecyclerView() {
         adapter = new FavoriteAppsAdapter(getContext(),new ArrayList<>(),this);
-        rvFavoriteApps.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
+        rvFavoriteApps.setLayoutManager(new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false));
         rvFavoriteApps.setHasFixedSize(true);
         rvFavoriteApps.setAdapter(adapter);
     }

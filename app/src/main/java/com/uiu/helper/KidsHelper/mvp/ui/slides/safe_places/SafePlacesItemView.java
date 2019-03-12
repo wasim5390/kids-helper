@@ -1,7 +1,7 @@
 package com.uiu.helper.KidsHelper.mvp.ui.slides.safe_places;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
+
 import android.util.AttributeSet;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -15,9 +15,11 @@ import com.uiu.helper.KidsHelper.mvp.Constant;
 import com.uiu.helper.KidsHelper.mvp.ui.tracker.DirectionsItem;
 import com.uiu.helper.R;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 
 public class SafePlacesItemView extends ConstraintLayout implements Constant {
 

@@ -6,10 +6,6 @@ import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -36,8 +32,13 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 
+import static com.uiu.helper.CompanionApp.getContext;
 import static com.uiu.helper.KidsHelper.mvp.model.response.GetAllSlidesResponse.SlideSerialComparator;
 
 /**
@@ -110,7 +111,7 @@ public abstract class BaseFragment  extends Fragment implements Constant{
 
 
     protected void updateSearchView(SearchView searchView){
-        EditText searchEditText = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.Gray));
         searchEditText.setHintTextColor(getResources().getColor(R.color.Black));
         searchEditText.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, 28F, getResources().getDisplayMetrics()));
@@ -168,9 +169,6 @@ public abstract class BaseFragment  extends Fragment implements Constant{
         });
     }
 
-    public void showMediaNotification(ShareEvent event){
-        mBaseActivity.showMediaNotification(event);
-    }
 
     public interface IRemoveOnSlideListener{
         void onRemoveSlideClick();

@@ -1,6 +1,5 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard;
 
-import android.support.v4.app.Fragment;
 
 
 import com.uiu.helper.KidsHelper.mvp.Constant;
@@ -28,6 +27,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import androidx.fragment.app.Fragment;
 
 import static com.uiu.helper.KidsHelper.mvp.model.response.GetAllSlidesResponse.SlideSerialComparator;
 
@@ -101,66 +102,8 @@ public class DashboardPresenter implements DashboardContract.Presenter,Constant 
 
     @Override
     public void convertSlidesToFragment(List<SlideItem> slides) {
-      //  createFragmentsFromSlide(slides, new ArrayList<>());
     }
 
-
-
-    private void createFragmentsFromSlide(List<SlideItem> slides,List<Fragment> mSlideFragment){
-        if(slides!=null)
-
-            for(SlideItem slideItem: slides) {
-                switch (slideItem.getType()){
-             /*   case SLIDE_INDEX_HOME:
-                    InviteFragment homeFragment = InviteFragment.newInstance();
-                    new SlideChooserPresenter(homeFragment, repository);
-                    mSlideFragment.add(homeFragment);
-                    break;*/
-                    case SLIDE_INDEX_FAV_PEOPLE:
-                        FavoritePeopleFragment favoritePeopleFragment = FavoritePeopleFragment.newInstance();
-                        new FavoritePeoplePresenter(favoritePeopleFragment,slideItem,preferenceUtil, user, repository);
-                        mSlideFragment.add(favoritePeopleFragment);
-                        break;
-                    case SLIDE_INDEX_FAV_APP:
-                        FavoriteAppFragment appsFragment = FavoriteAppFragment.newInstance();
-                        new FavoriteAppsPresenter(appsFragment, slideItem,preferenceUtil.getAccount().getId() ,user, repository);
-                        mSlideFragment.add(appsFragment);
-                        break;
-
-                    case SLIDE_INDEX_FAV_LINKS:
-                        FavoriteLinksFragment linksFragment = FavoriteLinksFragment.newInstance();
-                        new FavoriteLinksPresenter(linksFragment,slideItem,preferenceUtil,user, repository);
-                        mSlideFragment.add(linksFragment);
-                        break;
-
-                    case SLIDE_INDEX_SOS:
-                        SosFragment sosFragment = SosFragment.newInstance();
-                        new SosPresenter(sosFragment,slideItem, preferenceUtil,user, repository);
-                        mSlideFragment.add(sosFragment);
-                        break;
-
-
-                    case SLIDE_INDEX_REMINDERS:
-                        ReminderFragment reminderFragment = ReminderFragment.newInstance();
-                        new ReminderPresenter(reminderFragment,slideItem,preferenceUtil,user, repository);
-                        mSlideFragment.add(reminderFragment);
-                        break;
-                    case SLIDE_INDEX_MAP:
-                        KidLocationFragment fragment = KidLocationFragment.newInstance();
-                        KidLocationPresenter presenter = new KidLocationPresenter(fragment, user, repository);
-                        mSlideFragment.add(fragment);
-                        break;
-
-    /*          case SLIDE_INDEX_FAV_GAMES:
-                    break;
-*/
-                }
-            }
-
-
-        view.hideProgress();
-        view.onSlidesCreated(mSlideFragment);
-    }
 
 
 

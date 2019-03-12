@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layoutDirection="ltr"
@@ -44,7 +44,7 @@
                         android:layout_height="wrap_content"
                         style="@style/percentTextStyle"/>
 
-                    <android.support.v7.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/invite_email_input_field"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -258,4 +258,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -15,7 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -27,13 +26,10 @@ import com.squareup.picasso.Target;
 import com.uiu.helper.KidsHelper.constants.AppConstants;
 import com.uiu.helper.KidsHelper.entities.ContactEntity;
 import com.uiu.helper.KidsHelper.helpers.NotificationID;
-import com.uiu.helper.KidsHelper.mvp.BaseActivity;
 import com.uiu.helper.KidsHelper.mvp.Constant;
 import com.uiu.helper.KidsHelper.mvp.events.NotificationReceiveEvent;
 import com.uiu.helper.KidsHelper.mvp.events.ShareEvent;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationSender;
-import com.uiu.helper.KidsHelper.mvp.model.Sender;
-import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 import com.uiu.helper.R;
 import com.uiu.helper.receivers.NotificationActionReceiver;
 import com.uiu.helper.util.Utils;
@@ -48,6 +44,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
+
+import androidx.core.app.NotificationCompat;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -394,6 +392,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 connection.connect();
                 in = connection.getInputStream();
                 Bitmap myBitmap = BitmapFactory.decodeStream(in);
+                if(myBitmap==null)
+                    return null;
                 return Bitmap.createScaledBitmap(myBitmap, 70, 70, false);
 
             } catch (MalformedURLException e) {

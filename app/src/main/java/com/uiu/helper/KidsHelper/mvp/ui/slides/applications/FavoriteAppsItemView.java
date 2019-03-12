@@ -1,9 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.slides.applications;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
@@ -18,6 +15,7 @@ import com.uiu.helper.KidsHelper.mvp.Constant;
 import com.uiu.helper.KidsHelper.mvp.model.AppsEntity;
 import com.uiu.helper.R;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

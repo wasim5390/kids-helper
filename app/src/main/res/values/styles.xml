@@ -16,7 +16,6 @@
 
         <item name="android:colorPrimary">@color/PrimaryColor</item>
         <item name="android:colorPrimaryDark">@color/PrimaryDarkColor</item>
-
         <item name="android:statusBarColor">@color/PrimaryDarkColor</item>
     </style>
 
@@ -211,6 +210,12 @@
         <item name="android:textColor">@color/Black</item>
         <item name="font_path_from_assets">DroidSerif</item>
         <item name="android:fontFamily">@font/droid_serif</item>
+
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/instruction_tips</item>
 
     </style>
 

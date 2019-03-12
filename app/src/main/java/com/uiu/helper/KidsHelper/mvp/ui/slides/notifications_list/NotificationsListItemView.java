@@ -1,7 +1,7 @@
 package com.uiu.helper.KidsHelper.mvp.ui.slides.notifications_list;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.animation.Animation;
@@ -18,6 +18,7 @@ import com.uiu.helper.KidsHelper.mvp.model.NotificationsItem;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationsListResponse;
 import com.uiu.helper.R;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

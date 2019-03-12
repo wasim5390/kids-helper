@@ -1,21 +1,18 @@
 package com.uiu.helper.KidsHelper.mvp.ui.settings;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import com.uiu.helper.KidsHelper.entities.UserEntity;
 import com.uiu.helper.KidsHelper.mvp.BaseActivity;
 import com.uiu.helper.KidsHelper.mvp.Injection;
 import com.uiu.helper.KidsHelper.mvp.model.User;
-import com.uiu.helper.KidsHelper.mvp.util.PermissionUtil;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 import com.uiu.helper.R;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

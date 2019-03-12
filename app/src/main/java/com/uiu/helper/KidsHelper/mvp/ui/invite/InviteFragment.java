@@ -3,10 +3,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.invite;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PatternMatcher;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,6 +24,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.widget.AppCompatEditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

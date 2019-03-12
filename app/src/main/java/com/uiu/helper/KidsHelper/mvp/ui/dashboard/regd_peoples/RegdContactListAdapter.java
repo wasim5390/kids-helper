@@ -1,7 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard.regd_peoples;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,8 @@ import com.uiu.helper.KidsHelper.mvp.model.ContactEntity;
 import com.uiu.helper.R;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class RegdContactListAdapter extends RecyclerView.Adapter<RegdContactListAdapter.ViewHolder>{
 

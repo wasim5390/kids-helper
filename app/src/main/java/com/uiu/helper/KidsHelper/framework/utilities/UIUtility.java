@@ -4,10 +4,11 @@
 package com.uiu.helper.KidsHelper.framework.utilities;
 
 import android.content.Context;
-import android.support.v7.app.AlertDialog;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 /**
  * Encapsulates methods for UI widgets like {@link Toast}, {@link AlertDialog}

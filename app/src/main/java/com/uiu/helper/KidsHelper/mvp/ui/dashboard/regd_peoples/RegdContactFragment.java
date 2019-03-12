@@ -3,10 +3,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.dashboard.regd_peoples;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,12 +15,16 @@ import com.uiu.helper.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.widget.SearchView;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
 import static android.view.View.VISIBLE;
 
 public class RegdContactFragment extends BaseFragment implements Constant,RegdContactContract.View,
-        RegdContactListAdapter.OnItemClickListener,SearchView.OnQueryTextListener {
+        RegdContactListAdapter.OnItemClickListener, SearchView.OnQueryTextListener {
 
     private static final int REQ_CONTACT_INFO = 0x005;
     private RegdContactContract.Presenter presenter;
@@ -64,7 +64,7 @@ public class RegdContactFragment extends BaseFragment implements Constant,RegdCo
             }
         });
         try {
-            View v = mContactSearchView.findViewById(android.support.v7.appcompat.R.id.search_plate);
+            View v = mContactSearchView.findViewById(androidx.appcompat.R.id.search_plate);
             v.setBackgroundColor(ResourcesCompat.getColor(getResources(), android.R.color.transparent, null));
             updateSearchView(mContactSearchView);
         } catch (Exception e) {

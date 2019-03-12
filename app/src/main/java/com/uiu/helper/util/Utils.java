@@ -13,6 +13,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -51,6 +52,8 @@ import com.uiu.helper.BuildConfig;
 import com.uiu.helper.CompanionApp;
 
 import com.uiu.helper.KidsHelper.mvp.model.User;
+import com.uiu.helper.KidsHelper.mvp.ui.c_me.CmeeAudioActivity;
+import com.uiu.helper.KidsHelper.mvp.ui.camera.CustomCameraActivity;
 import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 import com.uiu.helper.R;
 
@@ -59,6 +62,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -72,6 +77,7 @@ import java.util.Locale;
 public class Utils {
     public static final String DATE_FORMAT_1 = "MM/dd/yyyy hh:mm a";
     public static final String DATE_FORMAT_2 = "hh:mm a";
+
     private static Dialog dialog;
     private static  Activity activity;
     private static final String TAG = Utils.class.getSimpleName();
@@ -634,4 +640,73 @@ public class Utils {
         return true;
     }
 
+    public static void saveOnGallery(Context context, File image) {
+
+        /*Intent galleryIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        Uri picUri = Uri.fromFile(image);
+        galleryIntent.setData(picUri);
+        context.sendBroadcast(galleryIntent);*/
+
+
+        MediaScannerConnection.scanFile(context,
+                new String[]{image.getAbsolutePath()}, null, null);
+    }
+
+    public static File createAudioFile(Context context) {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String fileName = "AUDIO_" + timeStamp + "_";
+        File storageDir = context.getExternalFilesDir(Environment.DIRECTORY_MUSIC);
+        File file = null;
+        try {
+            file = File.createTempFile(
+                    "audio",  /* prefix */
+                    ".mp3",         /* suffix */
+                    storageDir      /* directory */
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    public static File createVideoFile(Context context) throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String fileName = "VIDEO_" + timeStamp + "_";
+        File storageDir = context.getExternalFilesDir(Environment.DIRECTORY_DCIM);
+        File file = File.createTempFile(
+                "video",  /* prefix */
+                ".mp4",         /* suffix */
+                storageDir      /* directory */
+        );
+        return file;
+    }
+
+    /**
+     * copy stream upto 3 mb
+     * @param input
+     * @param output
+     * @throws IOException
+     */
+    public static void copyStream(InputStream input, OutputStream output) throws IOException {
+        byte[] buffer = new byte[3072];
+        int bytesRead;
+        while ((bytesRead = input.read(buffer)) != -1) {
+            output.write(buffer, 0, bytesRead);
+        }
+    }
+
+    public static File createImageFile(Context context) throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+        return image;
+    }
 }

@@ -1,8 +1,5 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.uiu.helper.CompanionApp;
 import com.uiu.helper.KidsHelper.mvp.model.SleepSetting;
@@ -31,6 +28,10 @@ import com.uiu.helper.KidsHelper.mvp.util.PreferenceUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import static com.uiu.helper.KidsHelper.mvp.Constant.SLIDE_INDEX_NOTIFICATIONS;
 import static com.uiu.helper.KidsHelper.mvp.Constant.SLIDE_INDEX_SAFE_PLACES;

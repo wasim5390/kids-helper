@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -39,6 +38,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.io.FileOutputStream;
 
+import androidx.core.app.ActivityCompat;
 import butterknife.BindView;
 
 

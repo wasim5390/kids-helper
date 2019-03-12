@@ -1,7 +1,7 @@
 package com.uiu.helper.KidsHelper.mvp.ui.dashboard;
 
 
-import android.support.v4.app.Fragment;
+
 
 import com.uiu.helper.KidsHelper.mvp.BasePresenter;
 import com.uiu.helper.KidsHelper.mvp.BaseView;
@@ -14,7 +14,6 @@ public class DashboardContract {
 
     interface View extends BaseView<Presenter> {
         void showMessage(String message);
-        void onSlidesCreated(List<Fragment> fragments);
         void onSlidesLoaded(User selectedUser, List<SlideItem> slideItems);
         void onSlidesUpdated(List<SlideItem> slides);
     }

@@ -5,6 +5,7 @@ import android.util.Log;
 
 
 import com.uiu.helper.KidsHelper.mvp.Constant;
+import com.uiu.helper.KidsHelper.mvp.model.CmeeChatModel;
 import com.uiu.helper.KidsHelper.mvp.model.ContactEntity;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationsListResponse;
 import com.uiu.helper.KidsHelper.mvp.model.response.BaseResponse;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import okhttp3.internal.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -115,7 +117,27 @@ public class RemoteDataSource implements DataSource, Constant {
             }
         });
     }
+    @Override
+    public void getFavContacts(String id, final GetDataCallback<GetFavContactResponse> callback) {
 
+        Call<GetFavContactResponse> call = RetrofitHelper.getInstance().getApi().getFavoriteContacts(id);
+        call.enqueue(new Callback<GetFavContactResponse>() {
+            @Override
+            public void onResponse(Call<GetFavContactResponse> call, Response<GetFavContactResponse> response) {
+                if (response.isSuccessful()) {
+                    callback.onDataReceived(response.body());
+                } else {
+                    callback.onFailed(response.code(),response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetFavContactResponse> call, Throwable t) {
+                Log.i("ContactEntity", "Error response--> " + t.getMessage());
+                callback.onFailed(0, ERROR_MESSAGE);
+            }
+        });
+    }
     @Override
     public void getSecondaryHelper(String kidId, GetDataCallback<GetSecondaryHelperResponse> callback) {
         Call<GetSecondaryHelperResponse> call = RetrofitHelper.getInstance().getApi().getSecondaryHelpers(kidId);
@@ -871,6 +893,27 @@ public class RemoteDataSource implements DataSource, Constant {
             @Override
             public void onFailure(Call<BaseResponse> call, Throwable t) {
                 callback.onFailed(0, ERROR_MESSAGE);
+            }
+        });
+    }
+    @Override
+    public void getCmeeHistoryList(String userId,String kidId, String pageNumber, GetDataCallback<CmeeChatModel> callback) {
+        Call<CmeeChatModel> call = RetrofitHelper.getInstance().getApi().getCmeeHistory(userId,kidId);
+        call.enqueue(new Callback<CmeeChatModel>() {
+            @Override
+            public void onResponse(Call<CmeeChatModel> call, Response<CmeeChatModel> response) {
+                if(response.isSuccessful())
+                    callback.onDataReceived(response.body());
+                else {
+                    callback.onFailed(response.code(), response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CmeeChatModel> call, Throwable t) {
+
+                callback.onFailed(0, t.getMessage());
+
             }
         });
     }

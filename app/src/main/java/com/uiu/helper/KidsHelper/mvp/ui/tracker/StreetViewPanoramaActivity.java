@@ -1,8 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.tracker;
 
 import android.os.Bundle;
-import android.support.v4.widget.ContentLoadingProgressBar;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +12,8 @@ import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 import com.uiu.helper.KidsHelper.mvp.BaseActivity;
 import com.uiu.helper.R;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.ContentLoadingProgressBar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

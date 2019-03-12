@@ -173,7 +173,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
-                        android:paddingRight="10dp">
+                        android:paddingRight="10dp"
+                        android:visibility="gone"
+                        >
                         <TextView
                             style="@style/MiniAppMenuButtonsStyle"
                             android:layout_width="wrap_content"
@@ -202,7 +204,7 @@
                                 android:text="@string/off"
                                 android:textColor="@color/Black" />
 
-                            <android.support.v7.widget.SwitchCompat
+                            <androidx.appcompat.widget.SwitchCompat
                                 android:id="@+id/swLocation"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -257,7 +259,7 @@
                                 android:text="@string/off"
                                 android:textColor="@color/Black" />
 
-                            <android.support.v7.widget.SwitchCompat
+                            <androidx.appcompat.widget.SwitchCompat
                                 android:id="@+id/swWifi"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -311,7 +313,7 @@
                                 android:text="@string/off"
                                 android:textColor="@color/Black" />
 
-                            <android.support.v7.widget.SwitchCompat
+                            <androidx.appcompat.widget.SwitchCompat
                                 android:id="@+id/swBluetooth"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -352,7 +354,7 @@
                     android:text="@string/brightness"
                     android:textColor="@color/Black" />
 
-                <android.support.v7.widget.AppCompatSeekBar
+                <androidx.appcompat.widget.AppCompatSeekBar
                     android:id="@+id/sbBrightness"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -396,7 +398,7 @@
                     android:text="@string/volume"
                     android:textColor="@color/Black" />
 
-                <android.support.v7.widget.AppCompatSeekBar
+                <androidx.appcompat.widget.AppCompatSeekBar
                     android:id="@+id/sbVolume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -4,7 +4,7 @@
 
     <!-- Google Analytics required permissions -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -18,11 +18,9 @@
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+
 
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
@@ -113,6 +111,42 @@
             android:name=".KidsHelper.mvp.ui.settings.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".KidsHelper.mvp.ui.share.ShareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".KidsHelper.mvp.ui.c_me.CmeeSelectorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".KidsHelper.mvp.ui.c_me.CmeeAudioActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".KidsHelper.mvp.ui.camera.CustomCameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".KidsHelper.mvp.ui.c_me.AudioPlaybackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".KidsHelper.mvp.ui.c_me.VideoPlaybackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".KidsHelper.mvp.ui.c_me.history.CmeeHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+        <activity
+            android:name=".KidsHelper.mvp.ui.camera.editor.PhotoEditorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
+
+
 
         <activity
             android:name=".KidsHelper.mvp.ui.tracker.StreetViewPanoramaActivity"
@@ -158,10 +192,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".KidsHelper.mvp.ui.media_notification.VideoPlaybackActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".KidsHelper.mvp.ui.dashboard.regd_peoples.RegdContactActivity"
             android:screenOrientation="portrait"

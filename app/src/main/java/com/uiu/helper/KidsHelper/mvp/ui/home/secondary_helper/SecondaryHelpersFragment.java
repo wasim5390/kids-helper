@@ -2,11 +2,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.home.secondary_helper;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.uiu.helper.KidsHelper.mvp.Constant;
@@ -16,6 +11,12 @@ import com.uiu.helper.KidsHelper.mvp.ui.InvitationConfirmationCallback;
 import com.uiu.helper.R;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SecondaryHelpersFragment extends DialogFragment implements Constant,SecondaryHelperListAdapter.Callback {
 
@@ -64,7 +65,7 @@ public class SecondaryHelpersFragment extends DialogFragment implements Constant
         View v = getActivity().getLayoutInflater().inflate(R.layout.fragment_dialog_secondary_helper, null);
 
         rvSecondaryHelper = (RecyclerView)v.findViewById(R.id.rvSecondaryHelper);
-        rvSecondaryHelper.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
+        rvSecondaryHelper.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         final SecondaryHelperListAdapter adapter = new SecondaryHelperListAdapter(getContext(),getSecondaryHelpers() , this);
 
         rvSecondaryHelper.setAdapter(adapter);

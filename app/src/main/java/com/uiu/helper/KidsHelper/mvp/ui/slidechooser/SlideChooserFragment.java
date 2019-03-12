@@ -1,7 +1,6 @@
 package com.uiu.helper.KidsHelper.mvp.ui.slidechooser;
 
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -17,6 +16,7 @@ import com.uiu.helper.util.Utils;
 
 import org.greenrobot.eventbus.EventBus;
 
+import androidx.appcompat.widget.AppCompatEditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

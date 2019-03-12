@@ -55,6 +55,8 @@ public interface Constant {
     String NO_SPACE_ON_SLIDE="No space available on this slide, add on other slide";
 
     String EXTRA_NOTIFICATION_TYPE = "notification_type";
+    String RECORDED_FILE_PATH ="recorded_file_path" ;
+    String RECORDED_FILE_TYPE ="recorded_file_type" ;
 
     int REQ_REQUESTED=1;
     int REJECTED=2;
@@ -84,7 +86,7 @@ public interface Constant {
     int MEDIA_IMAGE=1;
     int MEDIA_VIDEO=2;
     int MEDIA_AUDIO=3;
-
+    int MEDIA_FILE=4;
 
     interface INVITE {
 
@@ -93,6 +95,14 @@ public interface Constant {
         int REJECTED= 2;
         int INVITED= 3;
     }
+    String CAMERA_IMG_PATH ="camera_img_path" ;
+    String key_camera_type="CAMERA_TYPE";
+    String key_camera_for_result="CAMERA_FOR_RESULT";
 
-
+    interface IntentExtras {
+        String ACTION_CAMERA = "action-camera";
+        String ACTION_GALLERY = "action-gallery";
+        String IMAGE_PATH = "image-path";
+        String IMAGE_PATH_ID = "image-path-identity";
+    }
 }

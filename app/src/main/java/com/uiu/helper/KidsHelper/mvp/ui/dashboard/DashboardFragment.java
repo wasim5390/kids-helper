@@ -4,8 +4,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.dashboard;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +30,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 
 import static com.uiu.helper.KidsHelper.mvp.model.response.GetAllSlidesResponse.SlideSerialComparator;
@@ -141,10 +141,6 @@ public class DashboardFragment extends BaseFragment implements DashboardContract
     }
 
 
-    @Override
-    public void onSlidesCreated(List<Fragment> fragments) {
-        // setViewPager(fragments);
-    }
 
     @Override
     public void onSlidesLoaded(User user, List<SlideItem> slideItems) {

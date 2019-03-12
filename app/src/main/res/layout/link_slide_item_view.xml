@@ -9,7 +9,7 @@
     >
 
 
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -22,7 +22,7 @@
     android:layout_marginBottom="5dp"
     android:layout_marginStart="10dp"
     >
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,6 +53,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         android:id="@+id/link_detail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical">
 
         <TextView
@@ -64,8 +65,7 @@
             android:padding="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Title
-"/>
+            tools:text="Title"/>
 
         <TextView
             android:maxLines="2"
@@ -76,8 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            tools:text="dsfsdf
-"/>
+            tools:text="dsfsdf"/>
 
         <TextView
             android:maxLines="1"
@@ -87,13 +86,12 @@
             android:padding="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="sdfdsf
-"/>
+            tools:text="sdfdsf"/>
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/iv_iitem"

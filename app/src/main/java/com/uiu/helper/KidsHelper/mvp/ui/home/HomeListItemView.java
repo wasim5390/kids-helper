@@ -2,7 +2,6 @@ package com.uiu.helper.KidsHelper.mvp.ui.home;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import com.uiu.helper.KidsHelper.mvp.model.User;
 import com.uiu.helper.R;
 import com.uiu.helper.util.Utils;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

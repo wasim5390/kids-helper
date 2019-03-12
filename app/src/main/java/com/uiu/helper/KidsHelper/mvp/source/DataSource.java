@@ -1,6 +1,7 @@
 package com.uiu.helper.KidsHelper.mvp.source;
 
 
+import com.uiu.helper.KidsHelper.mvp.model.CmeeChatModel;
 import com.uiu.helper.KidsHelper.mvp.model.ContactEntity;
 import com.uiu.helper.KidsHelper.mvp.model.NotificationsListResponse;
 import com.uiu.helper.KidsHelper.mvp.model.response.BaseResponse;
@@ -47,6 +48,7 @@ public interface DataSource {
 
     void getRegdContacts(String id, GetDataCallback<GetFavContactResponse> callback);
     void addFavPeopleToSlide(String id, ContactEntity cont, GetDataCallback<GetFavContactResponse> callback);
+    void getFavContacts(String id, GetDataCallback<GetFavContactResponse> callback);
 
     void addFavLinkToSlide(HashMap<String,Object> linkParam, GetDataCallback<GetFavLinkResponse> callback);
     void getFavLinkIcon(String url, GetDataCallback<GetFavLinkIconResponce> callback);
@@ -79,7 +81,7 @@ public interface DataSource {
     void beepKidsDevice(String kidId,String helperId, GetResponseCallback<BaseResponse> callback);
 
     void getNotifications(boolean pending,String kidId,String userId, int pageNumber, GetResponseCallback<NotificationsListResponse> callback);
-
+    void getCmeeHistoryList(String userId,String kidId, String pageNumber,GetDataCallback<CmeeChatModel> callback);
     void updateSlideObjStatus(HashMap<String, Object> params, GetResponseCallback<BaseResponse> callback);
     void removeNotification(String notificationId, GetResponseCallback<BaseResponse> callback);
     void shareMediaFile(HashMap<String, RequestBody> params, MultipartBody.Part body, GetDataCallback<BaseResponse> callback);
